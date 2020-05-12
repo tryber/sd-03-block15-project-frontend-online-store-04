@@ -1,5 +1,5 @@
 const myObject = { method: 'GET', headers: { Accept: 'application/json' } };
-
+// teste PR
 export async function getCategories() {
   const data = await fetch('https://api.mercadolibre.com/sites/MLB/categories', myObject);
   const result = await data.json();
