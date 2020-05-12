@@ -7,9 +7,10 @@ import './App.css';
 class App extends React.Component {
   render() {
     return (
-      <SearchBar />
-      <Categories />
-      
+      <div>
+        <SearchBar />
+        <Categories />
+      </div>
     );
   }
 }
