@@ -1,11 +1,16 @@
 import React from 'react';
-import './App.css';
+import SearchBar from './components/SearchBar';
 import Categories from './components/Categories';
+import './App.css';
+
 
 class App extends React.Component {
   render() {
     return (
-      <Categories />
+      <div>
+        <SearchBar />
+        <Categories />
+      </div>
     );
   }
 }
