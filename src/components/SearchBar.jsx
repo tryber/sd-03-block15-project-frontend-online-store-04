@@ -4,7 +4,6 @@ import './SearchBar.css';
 
 class SearchBar extends React.Component {
 
-  // verifica se ta pegando os dados:
   // api.getCategories().then(categories => { console.log(categories) });
 
   constructor(props) {
