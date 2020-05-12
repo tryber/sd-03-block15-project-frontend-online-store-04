@@ -1,0 +1,12 @@
+.texto-pesquisa {
+  color: gray;
+  font-size: 18px;
+  text-align: center;
+}
+
+.input {
+  border: 1px solid #333;
+  height: 20px;
+  margin-top: 15px;
+  width: 70%;
+}

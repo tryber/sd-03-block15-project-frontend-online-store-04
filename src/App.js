@@ -1,16 +1,17 @@
 import React from 'react';
-import './App.css';
+import SearchBar from './components/SearchBar';
 import Categories from './components/Categories';
 import CartPage from './components/CartPage';
-// import ButtonCart from './components/ButtonCart';
+import './App.css';
 
 class App extends React.Component {
   render() {
     return (
-      <main>
+      <div>
+        <SearchBar />
         <Categories />
         <CartPage />
-      </main>
+      </div>
     );
   }
 }
