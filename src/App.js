@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Categories from './components/Categories';
 import CartPage from './components/CartPage';
-import ButtonCart from './components/ButtonCart';
+// import ButtonCart from './components/ButtonCart';
 
 class App extends React.Component {
   render() {
@@ -10,7 +10,6 @@ class App extends React.Component {
       <main>
         <Categories />
         <CartPage />
-        <ButtonCart />
       </main>
     );
   }

@@ -1,6 +1,4 @@
 import React from 'react';
-// import * as api from '../services/api';
-import cart from './cart.png';
 import ButtonCart from './ButtonCart';
 
 class CartPage extends React.Component {
