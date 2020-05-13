@@ -1,8 +1,8 @@
 import React from 'react';
 import SearchBar from './components/SearchBar';
 import Categories from './components/Categories';
+import CartPage from './components/CartPage';
 import './App.css';
-
 
 class App extends React.Component {
   render() {
@@ -10,6 +10,7 @@ class App extends React.Component {
       <div>
         <SearchBar />
         <Categories />
+        <CartPage />
       </div>
     );
   }
