@@ -5,20 +5,26 @@ import '../ProductList.css';
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: [] };
+    this.state = {
+      products: [],
+      showProducts: false,
+    };
   }
 
   componentDidMount() {
     const { products } = this.props;
     api.getProductsFromCategoryAndQuery('', products)
       .then((result) => {
-        this.setState({ products: result.results });
+        this.setState({
+          products: result.results,
+          showProducts: true,
+        });
       });
   }
 
   render() {
-    const { products } = this.state;
-    if (products.length === 0) {
+    const { products, showProducts } = this.state;
+    if (products.length === 0 && showProducts === true) {
       return <p>Nenhum produto foi encontrado</p>;
     }
     return (
