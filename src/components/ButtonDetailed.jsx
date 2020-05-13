@@ -1,6 +1,6 @@
 import React from 'react';
 import './ButtonDetailed.css';
-import cart2 from './carrinho.png'
+import cart2 from './carrinho.png';
 
 class ButtonDetailed extends React.Component {
 
@@ -17,7 +17,7 @@ class ButtonDetailed extends React.Component {
 
   render() {
     return (
-      <div className='content'>
+      <div className="content">
         <span className="quantidade">Quantidade:</span>
         <input
           type="number"
