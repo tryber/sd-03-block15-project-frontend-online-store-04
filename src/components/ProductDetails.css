@@ -1,0 +1,10 @@
+.specs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.productContainer {
+  display: flex;
+  width: 90%;
+}
