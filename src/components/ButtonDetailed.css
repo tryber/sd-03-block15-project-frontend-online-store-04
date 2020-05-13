@@ -1,1 +1,28 @@
-// css do botão detalhado
+.button-add {
+  background-color: azure;
+  border-radius: 5px;
+  border: 1px solid rgb(241, 211, 156);
+  height: 35px;
+  margin-left: 5px;
+}
+
+.button-add:hover {
+	background: rgb(231, 219, 202);
+  border: 1px solid #7c3903;
+  cursor: pointer;
+}
+
+.input-number {
+  border-radius: 5px;
+  border: 1px solid #7c3903;
+  font-size: 14px;
+  height: 22px;
+  margin-left: 5px;
+  padding-left: 10px;
+  width: 40px;
+}
+
+.quantidade {
+  color: #7c3903;
+  font-size: 15px;
+}
