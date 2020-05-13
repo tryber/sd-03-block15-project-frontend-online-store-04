@@ -1,6 +1,7 @@
 import React from 'react';
 // import * as api from '../services/api.js';
 import './SearchBar.css';
+import ProductList from './ProductList';
 
 class SearchBar extends React.Component {
 
@@ -8,13 +9,18 @@ class SearchBar extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.state = { item: '' };
+    this.state = {
+      item: '',
+      search: false,
+    };
     this.changeValue = this.changeValue.bind(this);
   }
 
   changeValue(e) {
-    this.setState({ item: e.target.value });
+    this.setState({
+      item: e.target.value,
+      search: false,
+    });
   }
 
   addText() {
@@ -29,17 +35,25 @@ class SearchBar extends React.Component {
     return <p className="texto-pesquisa">{item}</p>;
   }
 
+  doSearch() {
+    this.setState({ search: true });
+  }
+
   render() {
+    const { item, search } = this.state;
     return (
       <div>
         <center>
           <input
+            data-testid="query-input"
             type="text"
             className="input"
             onChange={this.changeValue}
           />
           {this.addText()}
         </center>
+        <button data-testid="query-button" type="button" onClick={() => this.doSearch()}>PESQUISAR</button>
+        {search && <ProductList products={item} />}
         <br />
       </div>
     );
