@@ -6,9 +6,7 @@ function ButtonCart() {
   return (
     <Router>
       <Link to="/CartPage">
-        <button data-testid="shopping-cart-button">
-          <img src={cart} width="70px" alt="cart-icon" />
-        </button>
+        <img data-testid="shopping-cart-button" src={cart} width="70px" alt="cart-icon" />
       </Link>
     </Router>
   );
