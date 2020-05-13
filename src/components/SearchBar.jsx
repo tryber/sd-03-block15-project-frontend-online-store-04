@@ -52,7 +52,13 @@ class SearchBar extends React.Component {
           />
           {this.addText()}
         </center>
-        <button data-testid="query-button" type="button" onClick={() => this.doSearch()}>PESQUISAR</button>
+        <button
+          data-testid="query-button"
+          type="button"
+          onClick={() => this.doSearch()}
+        >
+          PESQUISAR
+        </button>
         {search && <ProductList products={item} />}
         <br />
       </div>
