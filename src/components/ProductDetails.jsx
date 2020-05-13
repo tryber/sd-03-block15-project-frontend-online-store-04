@@ -3,13 +3,14 @@ import ButtonCart from './ButtonCart';
 
 export default class ProductDetails extends Component() {
   render() {
+    const { name, price, tecs, imgpath } = this.props;
     return (
       <section>
         <div>
-          <h3 data-testid="product-detail-name">Nome do produto - {this.props.price}</h3>
-          <img src={this.props.imgpath} alt={this.props.name} />
+          <h3 data-testid="product-detail-name">Nome do produto - {price}</h3>
+          <img src={imgpath} alt={name} />
           <p>Especificação Tecnica</p>
-          <p>{this.props}</p>
+          <p>{tecs}</p>
         </div>
         <ButtonCart />
       </section>
