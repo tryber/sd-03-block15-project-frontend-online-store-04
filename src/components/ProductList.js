@@ -18,6 +18,9 @@ class ProductList extends React.Component {
 
   render() {
     const { products } = this.state;
+    if (products.length === 0) {
+      return <p>Nenhum produto foi encontrado</p>;
+    }
     return (
       <div className="product-list">
         {products.map((product) => (
