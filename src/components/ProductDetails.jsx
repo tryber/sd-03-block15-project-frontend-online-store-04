@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ButtonCart from './ButtonCart';
 
-export default class ProductDetail extends Component() {
+export default class ProductDetails extends Component() {
   render() {
     return (
       <section>

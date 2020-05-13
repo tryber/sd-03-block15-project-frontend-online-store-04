@@ -5,11 +5,11 @@ import cart from './cart.png';
 function ButtonCart() {
   return (
     <Router>
-    <Link to="/CartPage">
-      <button data-testid="shopping-cart-button">
-        <img src={cart} width="70px" alt="cart-icon" />
-      </button>
-    </Link>
+      <Link to="/CartPage">
+        <button data-testid="shopping-cart-button">
+          <img src={cart} width="70px" alt="cart-icon" />
+        </button>
+      </Link>
     </Router>
   );
 }
