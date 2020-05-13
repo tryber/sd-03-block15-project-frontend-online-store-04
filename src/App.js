@@ -14,7 +14,6 @@ class App extends React.Component {
         <Categories />
         <CartPage />
         <ButtonDetailed />
-        <ButtonListing />
       </div>
     );
   }
