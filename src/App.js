@@ -1,17 +1,17 @@
 import React from 'react';
-import './App.css';
+import SearchBar from './components/SearchBar';
 import Categories from './components/Categories';
-import ProductList from './components/ProductList';
+import './App.css';
+
 
 class App extends React.Component {
 
 
   render() {
-    const teste = ['banana', 'laranja'];
     return (
       <div>
+        <SearchBar />
         <Categories />
-        <ProductList products={teste} />
       </div>
     );
   }

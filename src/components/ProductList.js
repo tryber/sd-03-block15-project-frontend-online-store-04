@@ -10,7 +10,12 @@ class ProductList extends React.Component {
     const { products } = this.props;
     return (
       <div>
-        {products.map((product) => <p>{product}</p>)}
+        {products.map((product) => (
+          <div>
+            <p>{product}</p>
+          </div>
+        ))}
+
       </div>
     );
   }
