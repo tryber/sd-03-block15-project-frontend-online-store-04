@@ -7,12 +7,12 @@ export default class ProductDetail extends Component() {
       <section>
         <div>
           <h3 data-testid="product-detail-name">Nome do produto - {this.props.price}</h3>
-          <img src={this.props.imgpath} alt={this.props.name}/>
+          <img src={this.props.imgpath} alt={this.props.name} />
           <p>Especificação Tecnica</p>
           <p>{this.props}</p>
         </div>
         <ButtonCart />
       </section>
-    )
+    );
   }
 }
