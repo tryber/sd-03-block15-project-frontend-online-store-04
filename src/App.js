@@ -4,6 +4,7 @@ import Categories from './components/Categories';
 import CartPage from './components/CartPage';
 import './App.css';
 import ButtonDetailed from './components/ButtonDetailed';
+import ButtonListing from './components/ButtonListing';
 
 class App extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
         <Categories />
         <CartPage />
         <ButtonDetailed />
+        <ButtonListing />
       </div>
     );
   }

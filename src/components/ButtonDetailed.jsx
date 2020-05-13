@@ -1,4 +1,3 @@
-// butão do produto detalhado p/ compra
 import React from 'react';
 import './ButtonDetailed.css';
 import cart2 from './carrinho.png'
@@ -26,7 +25,7 @@ class ButtonDetailed extends React.Component {
           className="input-number"
           onChange={this.changeValue}
         />
-        <button data-testid="product-increase-quantity" className="button-add">
+        <button data-testid="product-detail-add-to-cart" className="button-add-detailed">
           <img src={cart2} width="20px" alt="cart-icon" />
         </button>
       </div>

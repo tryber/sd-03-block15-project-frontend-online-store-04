@@ -1,12 +1,12 @@
-.button-add {
-  background-color: azure;
+.button-add-detailed {
+  background-color: rgb(250, 248, 234);
   border-radius: 5px;
   border: 1px solid rgb(241, 211, 156);
   height: 35px;
   margin-left: 5px;
 }
 
-.button-add:hover {
+.button-add-detailed:hover {
 	background: rgb(231, 219, 202);
   border: 1px solid #7c3903;
   cursor: pointer;

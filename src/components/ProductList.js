@@ -1,6 +1,8 @@
 import React from 'react';
 import * as api from '../services/api';
 import '../ProductList.css';
+import ButtonListing from './ButtonListing';
+import './ButtonListing.css';
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -37,6 +39,7 @@ class ProductList extends React.Component {
               R$
               {product.price}
             </p>
+            <ButtonListing />
           </div>
         ))}
       </div>
