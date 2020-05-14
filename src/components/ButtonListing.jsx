@@ -1,48 +1,37 @@
-import React from 'react';
-import './ButtonListing.css';
+import React, { Component } from 'react';
 import cart2 from './carrinho.png';
 
-class ButtonListing extends React.Component {
+class ButtonListing extends Component {
   constructor(props) {
     super(props);
 
-    this.intoCart = this.intoCart.bind(this);
+    this.addToCart = this.addToCart.bind(this);
+    this.quantityCheck = this.quantityCheck.bind(this);
+  }
+  addToCart() {
+    const { product } = this.props;
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', JSON.stringify([product]));
+    } else if (this.quantityCheck()) {
+      const products = JSON.parse(localStorage.getItem('cart'));
+      localStorage.setItem('cart', JSON.stringify([...products, product]));
+    } else {
+      console.log('estoque esgotado');
+    }
   }
 
-  intoCart() {
+  quantityCheck() {
     const { product } = this.props;
-
-    const itemsTotal = parseInt(localStorage.getItem('itemsTotal'), 10);
-
-    if (localStorage.getItem('products') === 0 || !localStorage.products) {
-      localStorage.setItem('itemsTotal', itemsTotal + 1);
-      localStorage.setItem('products', JSON.stringify([product]));
-    }
-
-    const products = JSON.parse(localStorage.getItem('products'));
-
-    if (localStorage.products.includes(product.id)) {
-      const index = products.findIndex((item) => item.id === product.id);
-      products[index].quantity += 1;
-      localStorage.setItem('itemsTotal', itemsTotal + 1);
-      localStorage.setItem('products', JSON.stringify(products));
-    }
-
-    localStorage.setItem('itemsTotal', itemsTotal + 1);
-    localStorage.setItem('products', JSON.stringify([...products, product]));
+    const products = JSON.parse(localStorage.getItem('cart')).filter((i) => i.id === product.id);
+    const quantity = product.available_quantity;
+    return (products.length < quantity);
   }
 
   render() {
     return (
-      <div className="content">
-        <button
-          data-testid="product-add-to-cart"
-          className="button-add"
-          onClick={this.intoCart}
-        >
-          Adicionar ao carrinho <img src={cart2} width="20px" alt="cart-icon" />
-        </button>
-      </div>
+      <button type="button" onClick={this.addToCart} data-testid="product-add-to-cart" className="button-add">
+        Adicionar ao Carrinho <img src={cart2} width="20px" alt="cart-icon" />
+      </button>
     );
   }
 }
