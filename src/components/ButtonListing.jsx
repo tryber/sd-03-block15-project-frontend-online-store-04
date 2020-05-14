@@ -10,7 +10,6 @@ class ButtonListing extends React.Component {
   }
 
   intoCart() {
-
     const { product } = this.props;
 
     const itemsTotal = parseInt(localStorage.getItem('itemsTotal'), 10);

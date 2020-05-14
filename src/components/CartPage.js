@@ -1,5 +1,5 @@
 import React from 'react';
-import './CartPage.css'
+import './CartPage.css';
 
 class CartPage extends React.Component {
   constructor(props) {
@@ -12,14 +12,14 @@ class CartPage extends React.Component {
   createCardProducts(title, thumbnail, price, id, quantity) {
     return (
 
-        <div key={id} className="sub-lista">
-          <div>
-            <img src={thumbnail} alt={title} />
-          </div>
-          <div data-testid="shopping-cart-product-name">{title}</div><br />
-          <div data-testid="shopping-cart-product-quantity">Quantidade:{quantity}</div>
-          <div><p>Preço:</p>{price}</div>
+      <div key={id} className="sub-lista">
+        <div>
+          <img src={thumbnail} alt={title} />
         </div>
+        <div data-testid="shopping-cart-product-name">{title}</div><br />
+        <div data-testid="shopping-cart-product-quantity">Quantidade:{quantity}</div>
+        <div><p>Preço:</p>{price}</div>
+      </div>
     );
   }
 
