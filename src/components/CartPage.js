@@ -33,7 +33,7 @@ class CartPage extends React.Component {
     });
   }
 
-  createProductInfos(title, thumbnail, price, id, quantity) {
+  createProductInfos = (title, thumbnail, price, id, quantity) => {
     return (
       <div key={id} className="sub-lista">
         <div className="align, image_content">
@@ -62,7 +62,7 @@ class CartPage extends React.Component {
     );
   }
 
-  checkoutButton() {
+  checkoutButton = () => {
     return (
       <Link to="/compra-finalizada">
         <button>
@@ -72,7 +72,7 @@ class CartPage extends React.Component {
     );
   }
 
-  totalPrice() {
+  totalPrice = () => {
     // teste
     return (
       <div>

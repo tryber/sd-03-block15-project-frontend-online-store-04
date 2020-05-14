@@ -29,7 +29,12 @@ class ButtonListing extends Component {
 
   render() {
     return (
-      <button type="button" onClick={this.addToCart} data-testid="product-add-to-cart" className="button-add">
+      <button
+        type="button"
+        onClick={this.addToCart}
+        data-testid="product-add-to-cart"
+        className="button-add"
+      >
         Adicionar ao Carrinho <img src={cart2} width="20px" alt="cart-icon" />
       </button>
     );
