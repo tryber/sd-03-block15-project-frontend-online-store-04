@@ -39,7 +39,7 @@ class ProductList extends React.Component {
               R$
               {product.price}
             </p>
-            <ButtonListing />
+            <ButtonListing product={product} />
           </div>
         ))}
       </div>
