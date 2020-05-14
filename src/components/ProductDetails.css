@@ -8,3 +8,8 @@
   display: flex;
   width: 90%;
 }
+
+.headerDetails {
+  display: flex;
+  justify-content: space-around;
+}

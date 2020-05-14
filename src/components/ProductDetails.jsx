@@ -4,11 +4,12 @@ import './ProductDetails.css';
 
 export default class ProductDetails extends Component() {
   render() {
-    const { name, price, tecs, imgpath } = this.props;
+    const { title, price, tecs, thumbnail } = this.props;
     return (
       <section>
 
         <div className="headerDetails">
+          <p>Botão voltar</p>
           <ButtonCart />
         </div>
 
@@ -16,7 +17,7 @@ export default class ProductDetails extends Component() {
 
           <div className="imgContainer">
             <h3 data-testid="product-detail-name">Nome do produto - {price}</h3>
-            <img src={imgpath} alt={name} />
+            <img src={thumbnail} alt={title} />
           </div>
 
           <div className="specs">
