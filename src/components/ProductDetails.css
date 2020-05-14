@@ -6,6 +6,7 @@
 
 .productContainer {
   display: flex;
+  flex-wrap: wrap;
   width: 90%;
 }
 
