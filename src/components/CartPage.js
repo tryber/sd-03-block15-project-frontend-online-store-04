@@ -62,7 +62,7 @@ class CartPage extends React.Component {
     );
   }
 
-  checkoutButton = () => {
+  checkoutButton() {
     return (
       <Link to="/compra-finalizada">
         <button>
