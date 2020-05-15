@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './CartPage.css';
 
 class CartPage extends React.Component {
@@ -22,8 +22,6 @@ class CartPage extends React.Component {
         const quantity = parseInt((accumulator + currentValue), 1);
         return quantity;
       }, 0); **/ // fror test
-      const totalItems = 1;
-      const quantity = 1;
       localStorage.setItem('totalItems', totalItems);
     }
   }
@@ -74,7 +72,7 @@ class CartPage extends React.Component {
           {this.returnButton()}
           <div>
             <h2>Carrinho de compras: </h2>
-            {arrayProducts.map(({ title, thumbnail, price, id, quantity }) =>
+            {arrayProducts.map(({ title, thumbnail, price, id, _quantity }) =>
               // CartPage.createProduct(title, thumbnail, price, id, quantity)
               <div key={id} className="sub-lista"> <div> <img src={thumbnail} alt={title} /> </div>
                 <div data-testid="shopping-cart-product-name"> {title} </div>
