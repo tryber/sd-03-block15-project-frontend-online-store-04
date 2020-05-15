@@ -9,16 +9,16 @@ class CartPage extends React.Component {
     this.state = {
       isShouldRedirect: false,
       urlRedirect: '',
-      productsArr: products,
+      arrayProducts: products,
     };
     this.redirectTo = this.redirectTo.bind(this);
   }
 
   componentDidUpdate() {
-    const { productsArr } = this.state;
-    localStorage.setItem('cart', JSON.stringify(productsArr));
-    if (productsArr) {
-      const totalItems = productsArr.reduce((acc, cur) => {
+    const { arrayProducts } = this.state;
+    localStorage.setItem('cart', JSON.stringify(arrayProducts));
+    if (arrayProducts) {
+      const totalItems = arrayProducts.reduce((acc, cur) => {
         const quantity = parseInt((cur.quantity), 10);
         return acc + quantity;
       }, 0);
@@ -72,7 +72,7 @@ class CartPage extends React.Component {
     );
   }
 
-  totalPrice = () => {
+  totalPrice() {
     // teste
     return (
       <div>
@@ -84,15 +84,15 @@ class CartPage extends React.Component {
 
   render() {
     const { history } = this.props;
-    const { productsArr, isShouldRedirect, urlRedirect } = this.state;
+    const { arrayProducts, isShouldRedirect, urlRedirect } = this.state;
     if (isShouldRedirect) history.push(urlRedirect);
-    if (productsArr && (productsArr.length !== 0)) {
+    if (arrayProducts && (arrayProducts.length !== 0)) {
       return (
         <div>
           {this.returnButton()}
           <div>
             <h2>Carrinho de compras: </h2>
-            {productsArr.map(({ title, thumbnail, price, id, quantity }) =>
+            {arrayProducts.map(({ title, thumbnail, price, id, quantity }) =>
               this.createProductInfos(title, thumbnail, price, id, quantity))}
           </div>
           <div>
