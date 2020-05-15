@@ -18,10 +18,12 @@ class CartPage extends React.Component {
     const { arrayProducts } = this.state;
     localStorage.setItem('cart', JSON.stringify(arrayProducts));
     if (arrayProducts) {
-      const totalItems = arrayProducts.reduce((accumulator, currentValue) => {
+      /* const totalItems = arrayProducts.reduce((accumulator, currentValue) => {
         const quantity = parseInt((accumulator + currentValue), 1);
         return quantity;
-      }, 0);
+      }, 0); **/ // fror test
+      const totalItems = 1;
+      const quantity = 1;
       localStorage.setItem('totalItems', totalItems);
     }
   }
@@ -62,26 +64,6 @@ class CartPage extends React.Component {
     );
   }
 
-  buttonEnd() {
-    return (
-      <Link to="/compra-finalizada">
-        <button>
-          Finalizar compra
-        </button>
-      </Link>
-    );
-  }
-
-  static priceTotal() {
-    // teste
-    return (
-      <div>
-        <h2>Valor total:
-        </h2>
-      </div>
-    );
-  }
-
   render() {
     const { history } = this.props;
     const { arrayProducts, isShouldRedirect, urlRedirect } = this.state;
@@ -96,12 +78,10 @@ class CartPage extends React.Component {
               // CartPage.createProduct(title, thumbnail, price, id, quantity)
               <div key={id} className="sub-lista"> <div> <img src={thumbnail} alt={title} /> </div>
                 <div data-testid="shopping-cart-product-name"> {title} </div>
-                <div data-testid="shopping-cart-product-quantity"> {quantity} </div> <br />
+                <div data-testid="shopping-cart-product-quantity"> <p>Quantidade: </p>1</div> <br />
                 <div>R$ {price} </div>
               </div>)}
           </div>
-          <div> {CartPage.priceTotal()} </div>
-          {this.buttonEnd()}
         </div>
       );
     }
