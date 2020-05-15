@@ -33,7 +33,7 @@ class CartPage extends React.Component {
     });
   }
 
-  createProductInfos(title, thumbnail, price, id, quantity) {
+  createProductInfos = (title, thumbnail, price, id, quantity) => {
     return (
       <div key={id} className="sub-lista">
         <div>
