@@ -21,7 +21,6 @@ class CartPage extends React.Component {
       const totalItems = arrayProducts.reduce((accumulator, currentValue) => {
         const quantity = parseInt((accumulator + currentValue), 1);
         return quantity;
-        
       }, 0);
       localStorage.setItem('totalItems', totalItems);
     }
@@ -63,7 +62,7 @@ class CartPage extends React.Component {
     );
   }
 
-  buttonEnd() {
+  static buttonEnd() {
     return (
       <Link to="/compra-finalizada">
         <button>
@@ -73,7 +72,7 @@ class CartPage extends React.Component {
     );
   }
 
-  priceTotal() {
+  static priceTotal() {
     // teste
     return (
       <div>
@@ -97,9 +96,9 @@ class CartPage extends React.Component {
               CartPage.createProduct(title, thumbnail, price, id, quantity))}
           </div>
           <div>
-            {this.priceTotal()}
+            {CartPage.priceTotal()}
           </div>
-          {this.buttonEnd()}
+          {CartPage.buttonEnd()}
         </div>
       );
     }
