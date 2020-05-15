@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ButtonCart from './ButtonCart';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
 import './ProductDetails.css';
 
 export default class ProductDetails extends Component {
@@ -32,7 +32,7 @@ export default class ProductDetails extends Component {
           >
             Detalhes
           </Link>
-      </div>
+        </div>
 
       </section>
     );
