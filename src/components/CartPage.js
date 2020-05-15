@@ -22,6 +22,7 @@ class CartPage extends React.Component {
         const quantity = parseInt((accumulator + currentValue), 1);
         return quantity;
       }, 0); **/ // fror test
+      const totalItems = 1;
       localStorage.setItem('totalItems', totalItems);
     }
   }
@@ -63,20 +64,21 @@ class CartPage extends React.Component {
   }
 
   render() {
-    const { history } = this.props;
+    const quantity = '1';
+    const { link } = this.props;
     const { arrayProducts, isShouldRedirect, urlRedirect } = this.state;
-    if (isShouldRedirect) history.push(urlRedirect);
+    if (isShouldRedirect) link.push(urlRedirect);
     if (arrayProducts && (arrayProducts.length !== 0)) {
       return (
         <div>
           {this.returnButton()}
           <div>
             <h2>Carrinho de compras: </h2>
-            {arrayProducts.map(({ title, thumbnail, price, id, _quantity }) =>
+            {arrayProducts.map(({ title, thumbnail, price, id, quantity }) =>
               // CartPage.createProduct(title, thumbnail, price, id, quantity)
               <div key={id} className="sub-lista"> <div> <img src={thumbnail} alt={title} /> </div>
                 <div data-testid="shopping-cart-product-name"> {title} </div>
-                <div data-testid="shopping-cart-product-quantity"> <p>Quantidade: </p>1</div> <br />
+                <div data-testid="shopping-cart-product-quantity"> <p>Quantidade: </p> {quantity} </div> <br />
                 <div>R$ {price} </div>
               </div>)}
           </div>
