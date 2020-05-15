@@ -18,7 +18,6 @@ class ButtonListing extends Component {
     } else {
       console.log('estoque esgotado');
     }
-    alert(`Produto ${product.title} adicionado ao carrinho!`);
   }
 
   quantityCheck() {
