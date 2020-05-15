@@ -13,7 +13,7 @@ class CartPage extends React.Component {
     };
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const { arrayProducts } = this.state;
     localStorage.setItem('cart', JSON.stringify(arrayProducts));
     if (arrayProducts) {

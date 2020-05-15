@@ -5,33 +5,30 @@ class ButtonListing extends Component {
   constructor(props) {
     super(props);
 
-    this.addToCart = this.addToCart.bind(this);
-    this.quantityCheck = this.quantityCheck.bind(this);
+    this.addCart = this.addCart.bind(this);
   }
-  addToCart() {
+  addCart() {
     const { product } = this.props;
-    if (!localStorage.getItem('cart')) {
-      localStorage.setItem('cart', JSON.stringify([product]));
-    } else if (this.quantityCheck()) {
-      const products = JSON.parse(localStorage.getItem('cart'));
-      localStorage.setItem('cart', JSON.stringify([...products, product]));
-    } else {
-      console.log('estoque esgotado');
+    const getCart = JSON.parse(localStorage.getItem('cart'));
+    if (!getCart) {
+      product.quantity = 1;
+      return localStorage.setItem('cart', JSON.stringify([{ ...product }]));
     }
-  }
-
-  quantityCheck() {
-    const { product } = this.props;
-    const products = JSON.parse(localStorage.getItem('cart')).filter((i) => i.id === product.id);
-    const quantity = product.available_quantity;
-    return (products.length < quantity);
+    const verifyItem = getCart.find((item) => item.id === product.id);
+    if (verifyItem) {
+      const index = getCart.indexOf(verifyItem);
+      verifyItem.quantity === 'undefined' ? getCart[index].quantity = 1 : getCart[index].quantity += 1;
+      return localStorage.setItem('cart', JSON.stringify(getCart));
+    }
+    product.quantity = 1;
+    return localStorage.setItem('cart', JSON.stringify([...getCart, { ...product }]));
   }
 
   render() {
     return (
       <button
         type="button"
-        onClick={this.addToCart}
+        onClick={this.addCart}
         data-testid="product-add-to-cart"
         className="button-add"
       >
