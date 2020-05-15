@@ -62,7 +62,7 @@ class CartPage extends React.Component {
     );
   }
 
-  static buttonEnd() {
+  buttonEnd() {
     return (
       <Link to="/compra-finalizada">
         <button>
@@ -98,10 +98,10 @@ class CartPage extends React.Component {
                 <div data-testid="shopping-cart-product-name"> {title} </div>
                 <div data-testid="shopping-cart-product-quantity"> {quantity} </div> <br />
                 <div>R$ {price} </div>
-              </div> )}
+              </div>)}
           </div>
           <div> {CartPage.priceTotal()} </div>
-          {CartPage.buttonEnd()}
+          {this.buttonEnd()}
         </div>
       );
     }
