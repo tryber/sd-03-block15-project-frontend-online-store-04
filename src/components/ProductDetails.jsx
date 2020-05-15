@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductDetails.css';
 import Increment from './Increment';
+import Rating from './Rating';
 
 export default class ProductDetails extends Component {
   render() {
@@ -21,6 +22,7 @@ export default class ProductDetails extends Component {
             <p>{condition}</p>
             <Increment />
             <button type="button"><Link to="/">VOLTAR</Link></button>
+            <Rating />
           </div>
         </div>
       </section>
