@@ -33,7 +33,7 @@ class CartPage extends React.Component {
     });
   }
 
-  createProductInfos(title, thumbnail, price, id, quantity) {
+  createProduct(title, thumbnail, price, id, quantity) {
     return (
       <div key={id} className="sub-lista">
         <div>
@@ -93,7 +93,7 @@ class CartPage extends React.Component {
           <div>
             <h2>Carrinho de compras: </h2>
             {arrayProducts.map(({ title, thumbnail, price, id, quantity }) =>
-              this.createProductInfos(title, thumbnail, price, id, quantity))}
+              this.createProduct(title, thumbnail, price, id, quantity))}
           </div>
           <div>
             {this.totalPrice()}
