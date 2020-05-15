@@ -15,8 +15,7 @@ class ProductList extends React.Component {
 
   componentDidMount() {
     const { products } = this.props;
-    const { categoryId } = this.props;
-    api.getProductsFromCategoryAndQuery(categoryId, products)
+    api.getProductsFromCategoryAndQuery('', products)
       .then((result) => {
         this.setState({
           products: result.results,
