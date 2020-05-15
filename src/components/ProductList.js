@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as api from '../services/api';
 import '../ProductList.css';
+
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -37,6 +39,7 @@ class ProductList extends React.Component {
               R$
               {product.price}
             </p>
+            <button type="button"><Link to={`/${product.id}/details`}>VER DATALHES</Link></button>
           </div>
         ))}
       </div>
