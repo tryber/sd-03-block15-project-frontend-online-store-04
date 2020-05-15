@@ -37,7 +37,7 @@ class CartPage extends React.Component {
     return (
       <div key={id} className="sub-lista">
         <div>
-          <img src={thumbnail} alt={`imagem de um ${title}`} />
+          <img src={thumbnail} alt={title} />
         </div>
         <div data-testid="shopping-cart-product-name"> {title} </div>
         <div data-testid="shopping-cart-product-quantity"> {quantity} </div>
