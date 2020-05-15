@@ -72,7 +72,7 @@ class CartPage extends React.Component {
     );
   }
 
-  totalPrice() {
+  priceTotal() {
     // teste
     return (
       <div>
@@ -96,7 +96,7 @@ class CartPage extends React.Component {
               this.createProduct(title, thumbnail, price, id, quantity))}
           </div>
           <div>
-            {this.totalPrice()}
+            {this.priceTotal()}
           </div>
           {this.buttonEnd()}
         </div>
