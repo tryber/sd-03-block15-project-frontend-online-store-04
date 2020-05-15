@@ -1,13 +1,73 @@
 import React from 'react';
-import ButtonCart from './ButtonCart';
+// import { Link } from 'react-router-dom';
+import './CartPage.css';
 
 class CartPage extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+    const products = JSON.parse(localStorage.getItem('cart'));
+    console.log(products);
+    this.state = {
+      arrayProducts: products,
+      quantity: '1',
+    };
+  }
+
+  componentDidUpdate() {
+    const { arrayProducts } = this.state;
+    localStorage.setItem('cart', JSON.stringify(arrayProducts));
+    if (arrayProducts) {
+      /* const totalItems = arrayProducts.reduce((accumulator, currentValue) => {
+        const quantity = parseInt((accumulator + currentValue), 1);
+        return quantity;
+      }, 0); **/ // fror test
+      const totalItems = 1;
+      localStorage.setItem('totalItems', totalItems);
+    }
+  }
+
+ /*  static createProduct(title, thumbnail, price, id, quantity) {
     return (
-      <section>
-        <ButtonCart />
-        <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
-      </section>
+      <div key={id} className="sub-lista">
+        <div>
+          <img src={thumbnail} alt={title} />
+        </div>
+        <div data-testid="shopping-cart-product-name"> {title} </div>
+        <div data-testid="shopping-cart-product-quantity"> {quantity} </div>
+        <br />
+        <div>R$ {price} </div>
+      </div>
+    );
+  } */
+
+  render() {
+    const { arrayProducts, quantity } = this.state;
+    if (arrayProducts && (arrayProducts.length !== 0)) {
+      return (
+        <div>
+          <h2 className="h2-fixo">Carrinho de compras: </h2> <br />
+          <div className="lista-pai">
+            {arrayProducts.map(({ title, thumbnail, price, id }) =>
+              // CartPage.createProduct(title, thumbnail, price, id, quantity)
+              <div key={id} className="sub-lista"> <div> <img src={thumbnail} alt={title} /> </div>
+                <div data-testid="shopping-cart-product-name"> {title} </div>
+                <div data-testid="shopping-cart-product-quantity">
+                  <p>Quantidade: </p>{quantity}
+                </div>
+                <br />
+                <div>Valor: R$ {price} </div>
+              </div>)}
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div>
+        {this.returnButton()}
+        <div className="empty_content" data-testid="shopping-cart-empty-message">
+          Seu carrinho está vazio
+        </div>
+      </div>
     );
   }
 }

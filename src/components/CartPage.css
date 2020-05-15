@@ -1,0 +1,19 @@
+.lista-pai {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  width: 90%;
+}
+
+.sub-lista {
+  border: 1px solid rgb(243, 214, 134);
+  margin: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.h2-fixo {
+  display: flex;
+  justify-content: center;
+}

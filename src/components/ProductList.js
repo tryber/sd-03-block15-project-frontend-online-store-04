@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as api from '../services/api';
 import '../ProductList.css';
+import ButtonListing from './ButtonListing';
 
 
 class ProductList extends React.Component {
@@ -39,7 +40,19 @@ class ProductList extends React.Component {
               R$
               {product.price}
             </p>
-            <button type="button"><Link to={`/${product.id}/details`}>VER DATALHES</Link></button>
+            <button
+              type="button"
+              data-testid="product-detail-link"
+            >
+              <Link to={{
+                pathname: `/${product.id}/details`,
+                state: product,
+              }}
+              >
+                VER DATALHES
+              </Link>
+            </button>
+            <ButtonListing product={product} />
           </div>
         ))}
       </div>
