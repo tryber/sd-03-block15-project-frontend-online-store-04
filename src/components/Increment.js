@@ -14,7 +14,11 @@ class Increment extends React.Component {
   }
 
   increase() {
-    this.setState((state) => ({ total: state.total + 1 }));
+    const { quantity } = this.props;
+    const { total } = this.state;
+    if (total < quantity) {
+      this.setState((state) => ({ total: state.total + 1 }));
+    }
   }
 
   render() {

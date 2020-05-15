@@ -5,7 +5,7 @@ import cart from './cart.png';
 function ButtonCart() {
   return (
     <Router>
-      <Link to="/CartPage">
+      <Link to="/cart">
         <img data-testid="shopping-cart-button" src={cart} width="70px" alt="cart-icon" />
       </Link>
     </Router>

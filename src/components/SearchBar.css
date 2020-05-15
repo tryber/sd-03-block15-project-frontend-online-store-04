@@ -4,9 +4,34 @@
   text-align: center;
 }
 
+.texto-pesquisa-null {
+  display: none;
+}
+
 .input {
   border: 1px solid #333;
-  height: 20px;
+  height: 30px;
   margin-top: 15px;
-  width: 70%;
+  width: 500px;
+}
+
+.product-sidebar {
+  display: flex;
+}
+
+.searchbar {
+  display: flex;
+  direction: column;
+  justify-content: center;
+  align-items: baseline;
+  margin: auto;
+}
+
+button {
+  background-color: rgb(66, 157, 231);
+  border-radius: 10px;
+  color: white;
+  height: 40px;
+  width: 150px;
+  
 }

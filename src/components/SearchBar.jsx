@@ -1,12 +1,10 @@
 import React from 'react';
-// import * as api from '../services/api.js';
 import './SearchBar.css';
 import ProductList from './ProductList';
+import Categories from './Categories';
+import ButtonCart from './ButtonCart';
 
 class SearchBar extends React.Component {
-
-  // api.getCategories().then(categories => { console.log(categories) });
-
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +30,7 @@ class SearchBar extends React.Component {
         </p>
       );
     }
-    return <p className="texto-pesquisa">{item}</p>;
+    return <p className="texto-pesquisa-null">{item}</p>;
   }
 
   doSearch() {
@@ -43,23 +41,29 @@ class SearchBar extends React.Component {
     const { item, search } = this.state;
     return (
       <div>
-        <center>
-          <input
-            data-testid="query-input"
-            type="text"
-            className="input"
-            onChange={this.changeValue}
-          />
-          {this.addText()}
-        </center>
-        <button
-          data-testid="query-button"
-          type="button"
-          onClick={() => this.doSearch()}
-        >
-          PESQUISAR
-        </button>
-        {search && <ProductList products={item} />}
+        <div className="searchbar">
+          <center>
+            <input
+              data-testid="query-input"
+              type="text"
+              className="input"
+              onChange={this.changeValue}
+            />
+            {this.addText()}
+          </center>
+          <button
+            data-testid="query-button"
+            type="button"
+            onClick={() => this.doSearch()}
+          >
+            PESQUISAR
+          </button>
+          <ButtonCart />
+        </div>
+        <div className="product-sidebar">
+          <Categories />
+          {search && <ProductList products={item} />}
+        </div>
         <br />
       </div>
     );
