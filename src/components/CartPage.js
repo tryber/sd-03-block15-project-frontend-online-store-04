@@ -18,9 +18,10 @@ class CartPage extends React.Component {
     const { arrayProducts } = this.state;
     localStorage.setItem('cart', JSON.stringify(arrayProducts));
     if (arrayProducts) {
-      const totalItems = arrayProducts.reduce((acc, cur) => {
-        const quantity = parseInt((cur.quantity), 10);
-        return acc + quantity;
+      const totalItems = arrayProducts.reduce((accumulator, currentValue) => {
+        const quantity = parseInt((accumulator + currentValue), 1);
+        return quantity;
+        
       }, 0);
       localStorage.setItem('totalItems', totalItems);
     }
