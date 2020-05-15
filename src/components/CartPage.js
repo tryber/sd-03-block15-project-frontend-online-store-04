@@ -79,8 +79,9 @@ class CartPage extends React.Component {
               // CartPage.createProduct(title, thumbnail, price, id, quantity)
               <div key={id} className="sub-lista"> <div> <img src={thumbnail} alt={title} /> </div>
                 <div data-testid="shopping-cart-product-name"> {title} </div>
-                <div data-testid="shopping-cart-product-quantity"> <p>Quantidade: </p> {quantity} </div> <br />
-                <div>R$ {price} </div>
+                <div data-testid="shopping-cart-product-quantity"> <p>Quantidade: </p> {quantity} </div>
+                <br />
+                <div>Valor: R$ {price} </div>
               </div>)}
           </div>
         </div>
