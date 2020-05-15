@@ -33,7 +33,7 @@ class CartPage extends React.Component {
     });
   }
 
-  static createProduct(title, thumbnail, price, id, quantity) {
+ /*  static createProduct(title, thumbnail, price, id, quantity) {
     return (
       <div key={id} className="sub-lista">
         <div>
@@ -45,7 +45,7 @@ class CartPage extends React.Component {
         <div>R$ {price} </div>
       </div>
     );
-  }
+  } */
 
   returnButton() {
     return (
@@ -93,7 +93,17 @@ class CartPage extends React.Component {
           <div>
             <h2>Carrinho de compras: </h2>
             {arrayProducts.map(({ title, thumbnail, price, id, quantity }) =>
-              CartPage.createProduct(title, thumbnail, price, id, quantity))}
+              // CartPage.createProduct(title, thumbnail, price, id, quantity)
+              <div key={id} className="sub-lista">
+                <div>
+                  <img src={thumbnail} alt={title} />
+                </div>
+                <div data-testid="shopping-cart-product-name"> {title} </div>
+                <div data-testid="shopping-cart-product-quantity"> {quantity} </div>
+                <br />
+                <div>R$ {price} </div>
+              </div>
+            )}
           </div>
           <div>
             {CartPage.priceTotal()}
