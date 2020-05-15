@@ -10,15 +10,8 @@ class Rating extends React.Component {
       email: '',
       message: '',
       rating: 0,
-      storage: JSON.parse(localStorage.getItem('comments')),
+      storage: [],
     };
-  }
-
-  componentDidMount() {
-    const { storage } = this.state;
-    if (storage === null) {
-      this.setState({ storage: [] });
-    }
   }
 
   componentDidUpdate() {

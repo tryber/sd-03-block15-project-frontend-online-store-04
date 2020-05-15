@@ -5,7 +5,7 @@ form {
   width: 48%;
 }
 
-input, textarea {
+input , textarea {
   margin: 10px;
 }
 
@@ -22,7 +22,7 @@ textarea {
   width: 130px;
 }
 
-.buttons{
+.buttons {
   display: block;
   margin-left: 15px;
   width: 500px;
@@ -30,7 +30,7 @@ textarea {
 
 .rating-section input {
   height: 30px;
-  width: 350px
+  width: 350px;
 }
 
 p {
