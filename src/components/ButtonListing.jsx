@@ -17,7 +17,9 @@ class ButtonListing extends Component {
     const verifyItem = getCart.find((item) => item.id === product.id);
     if (verifyItem) {
       const index = getCart.indexOf(verifyItem);
-      verifyItem.quantity === 'undefined' ? getCart[index].quantity = 1 : getCart[index].quantity += 1;
+      if (verifyItem.quantity === 'undefined') getCart[index].quantity = 1;
+      else getCart[index].quantity += 1;
+
       return localStorage.setItem('cart', JSON.stringify(getCart));
     }
     product.quantity = 1;
