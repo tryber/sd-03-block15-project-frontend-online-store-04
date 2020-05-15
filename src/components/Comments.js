@@ -4,11 +4,10 @@ import './Rating.css';
 import './Comments.css';
 
 class Comments extends React.Component {
-
   renderComments() {
-    const { storage } = this.props;
+    const storage = JSON.parse(localStorage.getItem('comments'));
     return (
-      storage && storage.map((e) => (
+      storage.map((e) => (
         <div className="comment" key={e.email}>
           <p>
             Email:
@@ -33,8 +32,8 @@ class Comments extends React.Component {
   }
 
   render() {
-    const { storage } = this.props;
-    if (storage === null || storage.length === 0) {
+    const storage = JSON.parse(localStorage.getItem('comments'));
+    if (!storage) {
       return (
         <div className="comment-box">
           <h1>Comentários</h1>

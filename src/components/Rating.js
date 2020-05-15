@@ -10,13 +10,7 @@ class Rating extends React.Component {
       email: '',
       message: '',
       rating: 0,
-      storage: [],
     };
-  }
-
-  componentDidUpdate() {
-    const { storage } = this.state;
-    localStorage.setItem('comments', [JSON.stringify(storage)]);
   }
 
   onStarClick(event) {
@@ -28,12 +22,15 @@ class Rating extends React.Component {
   }
 
   createComment() {
-    const { email, message, rating, storage } = this.state;
+    const { email, message, rating } = this.state;
+    let storage = JSON.parse(localStorage.getItem('comments'));
+    if (storage === null) { storage = []; }
+    const newStorage = [...storage, { email, message, rating }];
+    localStorage.setItem('comments', [JSON.stringify(newStorage)]);
     this.setState({
       email: '',
       message: '',
       rating: 0,
-      storage: [...storage, { email, message, rating }],
     });
   }
 
@@ -64,7 +61,7 @@ class Rating extends React.Component {
   }
 
   render() {
-    const { storage, rating } = this.state;
+    const { rating } = this.state;
     return (
       <div>
         <form>
@@ -83,7 +80,7 @@ class Rating extends React.Component {
           </button>
         </form>
         <div>
-          <Comments storage={storage} />
+          <Comments />
         </div>
       </div>
     );
