@@ -1,8 +1,9 @@
-.lista {
+.lista-pai {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
+  width: 90%;
 }
 
 .sub-lista {
@@ -10,4 +11,9 @@
   margin: 10px;
   text-align: center;
   width: 200px;
+}
+
+.h2-fixo {
+  display: flex;
+  justify-content: center;
 }

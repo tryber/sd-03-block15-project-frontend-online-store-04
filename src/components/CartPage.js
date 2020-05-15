@@ -8,12 +8,9 @@ class CartPage extends React.Component {
     const products = JSON.parse(localStorage.getItem('cart'));
     console.log(products);
     this.state = {
-      isShouldRedirect: false,
-      urlRedirect: '',
       arrayProducts: products,
       quantity: '1',
     };
-    this.redirectTo = this.redirectTo.bind(this);
   }
 
   componentDidUpdate() {
@@ -27,13 +24,6 @@ class CartPage extends React.Component {
       const totalItems = 1;
       localStorage.setItem('totalItems', totalItems);
     }
-  }
-
-  redirectTo(url) {
-    this.setState({
-      isShouldRedirect: true,
-      urlRedirect: url,
-    });
   }
 
  /*  static createProduct(title, thumbnail, price, id, quantity) {
@@ -50,31 +40,13 @@ class CartPage extends React.Component {
     );
   } */
 
-  returnButton() {
-    return (
-      <div>
-        <button
-          label="return"
-          type="button"
-          onClick={() => this.redirectTo('/')}
-          className="return-button"
-        >
-          Retornar
-        </button>
-      </div>
-    );
-  }
-
   render() {
-    const { link } = this.props;
-    const { arrayProducts, isShouldRedirect, urlRedirect, quantity } = this.state;
-    if (isShouldRedirect) link.push(urlRedirect);
+    const { arrayProducts, quantity } = this.state;
     if (arrayProducts && (arrayProducts.length !== 0)) {
       return (
         <div>
-          {this.returnButton()}
-          <div>
-            <h2>Carrinho de compras: </h2>
+          <h2 className="h2-fixo">Carrinho de compras: </h2> <br />
+          <div className="lista-pai">
             {arrayProducts.map(({ title, thumbnail, price, id }) =>
               // CartPage.createProduct(title, thumbnail, price, id, quantity)
               <div key={id} className="sub-lista"> <div> <img src={thumbnail} alt={title} /> </div>

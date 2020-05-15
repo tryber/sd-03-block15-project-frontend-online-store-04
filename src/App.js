@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import Categories from './components/Categories';
 import ButtonCart from './components/ButtonCart';
@@ -9,13 +9,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-
-        <Switch>
-          <Route exact path="/cart" component={CartPage} />
-        </Switch>
+        <Router>
+          <Switch>
+            <Route exact path="/cart" component={CartPage} />
+          </Switch>
+          <Link to="/cart" data-testid="shopping-cart-button">
+            <ButtonCart />
+          </Link>
+        </Router>
 
         <SearchBar />
-        <ButtonCart />
+        
         <Categories />
       </div>
     );
