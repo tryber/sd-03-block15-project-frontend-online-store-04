@@ -34,3 +34,4 @@ class ButtonDetailed extends React.Component {
 }
 
 export default ButtonDetailed;
+

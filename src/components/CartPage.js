@@ -13,7 +13,7 @@ class CartPage extends React.Component {
     };
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const { arrayProducts } = this.state;
     localStorage.setItem('cart', JSON.stringify(arrayProducts));
     if (arrayProducts) {
@@ -25,20 +25,6 @@ class CartPage extends React.Component {
       localStorage.setItem('totalItems', totalItems);
     }
   }
-
- /*  static createProduct(title, thumbnail, price, id, quantity) {
-    return (
-      <div key={id} className="sub-lista">
-        <div>
-          <img src={thumbnail} alt={title} />
-        </div>
-        <div data-testid="shopping-cart-product-name"> {title} </div>
-        <div data-testid="shopping-cart-product-quantity"> {quantity} </div>
-        <br />
-        <div>R$ {price} </div>
-      </div>
-    );
-  } */
 
   render() {
     const { arrayProducts, quantity } = this.state;
@@ -63,7 +49,6 @@ class CartPage extends React.Component {
     }
     return (
       <div>
-        {this.returnButton()}
         <div className="empty_content" data-testid="shopping-cart-empty-message">
           Seu carrinho está vazio
         </div>
