@@ -62,7 +62,7 @@ class CartPage extends React.Component {
     );
   }
 
-  checkoutButton() {
+  buttonEnd() {
     return (
       <Link to="/compra-finalizada">
         <button>
@@ -98,7 +98,7 @@ class CartPage extends React.Component {
           <div>
             {this.totalPrice()}
           </div>
-          {this.checkoutButton()}
+          {this.buttonEnd()}
         </div>
       );
     }
