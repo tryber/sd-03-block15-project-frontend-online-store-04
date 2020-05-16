@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './ProductDetails.css';
 import Increment from './Increment';
 import Rating from './Rating';
+import ButtonCart from './ButtonCart';
 
 export default class ProductDetails extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class ProductDetails extends Component {
     } = this.props;
     return (
       <section>
+        <ButtonCart />
         <div className="headerDetails">
           {console.log(this.props)}
           <div data-testid="product">
