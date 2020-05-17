@@ -1,7 +1,5 @@
 .list {
-  display: flex;
-  flex: column wrap;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: flex-end;
   margin-top: 10px;
   width: 90%;

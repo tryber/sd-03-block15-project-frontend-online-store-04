@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import './CartPage.css';
 import CartItem from './CartItem';
 
+function renderEmptyCartMessage() {
+  return (
+    <div>
+      <div className="empty_content" data-testid="shopping-cart-empty-message">
+        Seu carrinho está vazio
+      </div>
+    </div>
+  );
+}
+
 class CartPage extends React.Component {
   constructor(props) {
     super(props);
@@ -45,11 +55,7 @@ class CartPage extends React.Component {
       );
     }
     return (
-      <div>
-        <div className="empty_content" data-testid="shopping-cart-empty-message">
-          Seu carrinho está vazio
-        </div>
-      </div>
+      renderEmptyCartMessage()
     );
   }
 }
