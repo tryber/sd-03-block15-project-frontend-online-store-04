@@ -1,0 +1,29 @@
+.specs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.headerDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 7;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-info {
+  align-self: flex-start;
+  flex-grow: 0;
+  width: 200px;
+}

@@ -1,0 +1,23 @@
+.list {
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  margin-top: 10px;
+  width: 90%;
+}
+
+.total {
+  align-self: flex-end;
+}
+
+span {
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  flex-grow: 1;
+}

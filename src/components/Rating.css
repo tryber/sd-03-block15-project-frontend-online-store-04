@@ -1,0 +1,39 @@
+form {
+  border: 1px solid black;
+  display: flex;
+  margin: 20px auto;
+  padding: 20px;
+  width: 400px;
+}
+
+input , textarea {
+  margin: 10px;
+}
+
+textarea {
+  height: 80px;
+  width: 350px;
+}
+
+.rating-button {
+  display: block;
+  font-size: 20px;
+  height: 50px;
+  margin-left: 10px;
+  width: 130px;
+}
+
+.buttons {
+  display: block;
+  margin-left: 15px;
+  width: 500px;
+}
+
+.rating-section input {
+  height: 30px;
+  width: 350px;
+}
+
+p {
+  margin: 10px;
+}
