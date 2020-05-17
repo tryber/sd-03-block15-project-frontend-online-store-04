@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './CartPage.css';
+import ButtonCart from './ButtonCart';
 
 class CartPage extends React.Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class CartPage extends React.Component {
     }
     return (
       <div>
+        <ButtonCart />
         <div className="empty_content" data-testid="shopping-cart-empty-message">
           Seu carrinho está vazio
         </div>
