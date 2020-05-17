@@ -66,8 +66,26 @@ class SearchBar extends React.Component {
     );
   }
 
+  renderCategories() {
+    const { categories } = this.state;
+    return (
+      categories.map((el) => (
+        <div className="categories">
+          <button
+            type="button"
+            data-testid="category"
+            key={el.id}
+            value={el.name}
+            onClick={() => this.getCategory(el.id)}
+          >
+            {el.name}
+          </button>
+        </div>
+      )));
+  }
+
   render() {
-    const { item, search, searchWithCategory, category, categories } = this.state;
+    const { item, search, searchWithCategory, category } = this.state;
     return (
       <div>
         <div className="top-bar">
@@ -87,19 +105,7 @@ class SearchBar extends React.Component {
           {/* <Categories click={(event) => this.getCategorie(event)} /> */}
           <div>
             <h3>ou selecione uma categoria</h3>
-            {categories.map((el) => (
-              <div className="categories">
-                <button
-                  type="button"
-                  data-testid="category"
-                  key={el.id}
-                  value={el.name}
-                  onClick={() => this.getCategory(el.id)}
-                >
-                  {el.name}
-                </button>
-              </div>
-            ))}
+            {this.renderCategories()}
           </div>
           {search && <ProductList item={item} />}
           {searchWithCategory && <ProductList category={category} item={item} />}

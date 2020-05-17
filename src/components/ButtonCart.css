@@ -1,4 +1,4 @@
-.cart-info > * {
+.cart-info {
   font-size: 20px;
   text-align: center;
 }
@@ -8,12 +8,12 @@
   flex-direction: column;
 }
 
-h3{
+h3 {
   margin: 20px auto;
   width: 300px;
 }
 
-button.increment {
+.increment {
   margin: 10px;
   width: 40px;
 }
