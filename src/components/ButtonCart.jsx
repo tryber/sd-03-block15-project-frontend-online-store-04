@@ -16,7 +16,8 @@ function ButtonCart() {
         <img
           src={cart}
           width="70px"
-          alt="cart-icon" data-testid="shopping-cart-button" className="img-cart" />
+          alt="cart-icon" data-testid="shopping-cart-button" className="img-cart"
+        />
       </Link>
       <p>Produtos no Carrinho: </p>
       <div data-testid="shopping-cart-size">{total || '0'}</div>

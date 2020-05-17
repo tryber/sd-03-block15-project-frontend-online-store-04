@@ -35,8 +35,8 @@
 }
 
 button {
-  border: 1px solid #e3651b;
   background-color: white;
+  border: 1px solid #e3651b;
   border-radius: 10px;
   color: #ea4d2a;
   height: 45px;
@@ -63,8 +63,8 @@ button:hover {
   align-self: flex-end;
   background: #f38c23 8%;
   flex-grow: 1;
-  margin: 20px;
   height: 70px;
+  margin: 20px;
 }
 
 .categories {

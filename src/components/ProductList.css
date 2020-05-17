@@ -6,8 +6,8 @@
 }
 
 .product {
-  border-radius: 10px;
   border: 1px solid rgba(238, 226, 213, 0.933);
+  border-radius: 10px;
   color: rgb(82, 48, 4);
   margin: 10px;
   min-height: 350px;
