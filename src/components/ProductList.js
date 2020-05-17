@@ -4,7 +4,24 @@ import * as api from '../services/api';
 import '../ProductList.css';
 import ButtonListing from './ButtonListing';
 
-
+function renderButton(id, product) {
+  console.log(this);
+  return (
+    <button
+      type="button"
+    >
+      <Link
+        data-testid="product-detail-link"
+        to={{
+          pathname: `/${id}/details`,
+          state: product,
+        }}
+      >
+        VER DATALHES
+      </Link>
+    </button>
+  );
+}
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
@@ -40,18 +57,8 @@ class ProductList extends React.Component {
               R$
               {product.price}
             </p>
-            <button
-              type="button"
-              data-testid="product-detail-link"
-            >
-              <Link to={{
-                pathname: `/${product.id}/details`,
-                state: product,
-              }}
-              >
-                VER DATALHES
-              </Link>
-            </button>
+            {product.shipping.free_shipping && <p data-testid="free-shipping">Frete Grátis</p>}
+            {renderButton(product.id, product)}
             <ButtonListing product={product} />
           </div>
         ))}

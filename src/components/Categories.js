@@ -26,12 +26,11 @@ class Categories extends React.Component {
             data-testid="category"
             key={category.id}
             value={category.name}
-            onClick={() => click(category.id)}
+            onClick={() => click(category.name)}
           >
             {category.name}
           </button>
         ))}
-
       </div>
     );
   }

@@ -20,10 +20,10 @@
 }
 
 .searchbar {
+  align-items: baseline;
   display: flex;
   direction: column;
   justify-content: center;
-  align-items: baseline;
   margin: auto;
 }
 

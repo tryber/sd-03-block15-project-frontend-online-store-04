@@ -21,6 +21,18 @@ class Increment extends React.Component {
     }
   }
 
+  addToCart() {
+    const { total } = this.state;
+    const { info } = this.props;
+    const infoWithQuantity = { ...info, total };
+    let storage = JSON.parse(localStorage.getItem('cart'));
+    if (storage === null) {
+      storage = [];
+    }
+    const newStorage = JSON.stringify([...storage, infoWithQuantity]);
+    localStorage.setItem('cart', newStorage);
+  }
+
   render() {
     const { total } = this.state;
     return (
@@ -29,7 +41,13 @@ class Increment extends React.Component {
         <button type="button" onClick={() => this.decrease()}>-</button>
         {total}
         <button type="button" onClick={() => this.increase()}>+</button>
-        <button type="button">Adicionar ao Carrinho</button>
+        <button
+          data-testid="product-detail-add-to-cart"
+          type="button"
+          onClick={() => this.addToCart()}
+        >
+          Adicionar ao Carrinho
+        </button>
       </div>
     );
   }

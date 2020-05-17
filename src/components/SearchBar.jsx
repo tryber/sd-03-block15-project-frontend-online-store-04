@@ -3,7 +3,6 @@ import './SearchBar.css';
 import ProductList from './ProductList';
 import Categories from './Categories';
 import ButtonCart from './ButtonCart';
-// import CartPage from './CartPage';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -51,20 +50,26 @@ class SearchBar extends React.Component {
     });
   }
 
+  renderSearchBar() {
+    return (
+      <center>
+        <input
+          data-testid="query-input"
+          type="text"
+          className="input"
+          onChange={this.changeValue}
+        />
+        {this.addText()}
+      </center>
+    );
+  }
+
   render() {
     const { item, search, searchCategory, category } = this.state;
     return (
       <div>
         <div className="searchbar">
-          <center>
-            <input
-              data-testid="query-input"
-              type="text"
-              className="input"
-              onChange={this.changeValue}
-            />
-            {this.addText()}
-          </center>
+          {this.renderSearchBar()}
           <button
             data-testid="query-button"
             type="button"
@@ -76,11 +81,9 @@ class SearchBar extends React.Component {
         </div>
         <div className="product-sidebar">
           <Categories click={(event) => this.getCategorie(event)} />
-          {/* <CartPage /> */}
           {searchCategory && <ProductList category={category} />}
           {search && <ProductList item={item} />}
         </div>
-        <br />
       </div>
     );
   }

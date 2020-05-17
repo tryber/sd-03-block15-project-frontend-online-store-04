@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar';
 import CartPage from './components/CartPage';
 import './App.css';
 import ProductDetails from './components/ProductDetails';
+import Checkout from './components/Checkout';
 
 
 class App extends React.Component {
@@ -14,7 +15,8 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/cart" component={CartPage} />
             <Route path="/:id/details" component={ProductDetails} />
-            <SearchBar path="/" component={SearchBar} />
+            <Route path="/checkout" component={Checkout} />
+            <Route exact path="/" component={SearchBar} />
           </Switch>
         </Router>
       </div>

@@ -1,14 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import cart from './cart.png';
 
 function ButtonCart() {
+  let storage = JSON.parse(localStorage.getItem('cart'));
+  if (storage === null) {
+    storage = [];
+  };
+  const total = storage.reduce((sum, e) => (sum + e.total), 0);
+
   return (
-    <Router>
-      <Link to="/cart" data-testid="shopping-cart-button">
-        <img src={cart} width="70px" alt="cart-icon" />
+    <div>
+      <Link to="/cart">
+        <img src={cart} width="70px" alt="cart-icon" data-testid="shopping-cart-button" />
       </Link>
-    </Router>
+      <div data-testid="shopping-cart-size">{total}</div>
+    </div>
   );
 }
 
