@@ -38,9 +38,9 @@ class Increment extends React.Component {
     return (
       <div>
         <h1>Quantidade</h1>
-        <button type="button" onClick={() => this.decrease()}>-</button>
+        <button type="button" className="increment" onClick={() => this.decrease()}>-</button>
         {total}
-        <button type="button" onClick={() => this.increase()}>+</button>
+        <button type="button" className="increment" onClick={() => this.increase()}>+</button>
         <button
           data-testid="product-detail-add-to-cart"
           type="button"

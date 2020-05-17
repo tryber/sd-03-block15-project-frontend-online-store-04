@@ -1,15 +1,16 @@
 .comment-box {
   border: 1px solid black;
-  margin: 10px;
+  margin: 10px auto;
   padding: 5px;
-  width: 50%;
+  width: 900px;
 }
 
 .comment {
   border: 1px solid black;
-  margin: 5px;
+  margin: 10px auto;
   padding: 5px;
-  width: 97%;
+  text-align: left;
+  width: 90%;
 }
 
 h1 {

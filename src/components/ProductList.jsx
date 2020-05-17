@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as api from '../services/api';
-import '../ProductList.css';
+import './ProductList.css';
 import ButtonListing from './ButtonListing';
 
 function renderButton(id, product) {

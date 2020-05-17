@@ -19,7 +19,6 @@ export default class ProductDetails extends Component {
 
     return (
       <section>
-        <ButtonCart />
         <div className="headerDetails">
           <div data-testid="product">
             <h3 data-testid="product-detail-name">{title}</h3>
@@ -33,6 +32,7 @@ export default class ProductDetails extends Component {
             <Rating />
           </div>
         </div>
+        <ButtonCart />
       </section>
     );
   }

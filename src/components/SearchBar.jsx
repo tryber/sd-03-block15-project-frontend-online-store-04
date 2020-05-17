@@ -1,9 +1,17 @@
 import React from 'react';
 import './SearchBar.css';
 import ProductList from './ProductList';
-import Categories from './Categories';
+// import Categories from './Categories';
 import ButtonCart from './ButtonCart';
+import * as api from '../services/api';
 
+function addText() {
+  return (
+    <p data-testid="home-initial-message" className="texto-pesquisa">
+      Digite algum termo de pesquisa ou escolha uma categoria.
+    </p>
+  );
+}
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -11,36 +19,30 @@ class SearchBar extends React.Component {
       item: '',
       category: '',
       search: false,
-      searchCategory: false,
+      searchWithCategory: false,
+      categories: [],
     };
     this.changeValue = this.changeValue.bind(this);
   }
 
-  getCategorie(category) {
+  componentDidMount() {
+    api.getCategories()
+      .then((result) => this.setState({ categories: result }));
+  }
+
+  getCategory(categoryId) {
     this.setState({
-      category,
+      category: categoryId,
       search: false,
-      searchCategory: true,
+      searchWithCategory: true,
     });
   }
 
   doSearch() {
     this.setState({
       search: true,
-      searchCategory: false,
+      searchWithCategory: false,
     });
-  }
-
-  addText() {
-    const { item } = this.state;
-    if (item === '') {
-      return (
-        <p data-testid="home-initial-message" className="texto-pesquisa">
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </p>
-      );
-    }
-    return <p className="texto-pesquisa-null">{item}</p>;
   }
 
   changeValue(e) {
@@ -59,30 +61,48 @@ class SearchBar extends React.Component {
           className="input"
           onChange={this.changeValue}
         />
-        {this.addText()}
+        {addText()}
       </center>
     );
   }
 
   render() {
-    const { item, search, searchCategory, category } = this.state;
+    const { item, search, searchWithCategory, category, categories } = this.state;
     return (
       <div>
-        <div className="searchbar">
-          {this.renderSearchBar()}
-          <button
-            data-testid="query-button"
-            type="button"
-            onClick={() => this.doSearch()}
-          >
-            PESQUISAR
-          </button>
-          <ButtonCart />
+        <div className="top-bar">
+          <div className="searchbar">
+            {this.renderSearchBar()}
+            <button
+              data-testid="query-button"
+              type="button"
+              onClick={() => this.doSearch()}
+            >
+              PESQUISAR
+            </button>
+          </div>
+          <ButtonCart className="cart-icon" />
         </div>
         <div className="product-sidebar">
-          <Categories click={(event) => this.getCategorie(event)} />
-          {searchCategory && <ProductList category={category} />}
+          {/* <Categories click={(event) => this.getCategorie(event)} /> */}
+          <div>
+            <h3>ou selecione uma categoria</h3>
+            {categories.map((el) => (
+              <div className="categories">
+                <button
+                  type="button"
+                  data-testid="category"
+                  key={el.id}
+                  value={el.name}
+                  onClick={() => this.getCategory(el.id)}
+                >
+                  {el.name}
+                </button>
+              </div>
+            ))}
+          </div>
           {search && <ProductList item={item} />}
+          {searchWithCategory && <ProductList category={category} item={item} />}
         </div>
       </div>
     );

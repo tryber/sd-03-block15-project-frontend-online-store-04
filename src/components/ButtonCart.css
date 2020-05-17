@@ -1,0 +1,19 @@
+.cart-info > * {
+  font-size: 20px;
+  text-align: center;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+}
+
+h3{
+  margin: 20px auto;
+  width: 300px;
+}
+
+button.increment {
+  margin: 10px;
+  width: 40px;
+}

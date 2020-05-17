@@ -9,14 +9,8 @@ class Comments extends React.Component {
     return (
       storage.map((e) => (
         <div className="comment" key={e.email}>
-          <p>
-            Email:
-            {e.email}
-          </p>
-          <p>
-            Mensagem:
-            {e.message}
-          </p>
+          <p>{`Email: ${e.email}`}</p>
+          <p>{`Mensagem: ${e.message}`}</p>
           <p>
             Nota:
             <StarRatingComponent

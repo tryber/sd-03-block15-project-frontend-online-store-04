@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Checkout.css';
 
 
@@ -78,6 +79,7 @@ class Checkout extends React.Component {
           </div>
         </div>
         {renderForm()}
+        <Link to="/"><button type="button">VOLTAR</button></Link>
       </div>
     );
   }

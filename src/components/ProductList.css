@@ -2,10 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .product {
   margin: 10px;
   text-align: center;
   width: 200px;
+}
+
+.product button {
+  align-self: flex-end;
 }

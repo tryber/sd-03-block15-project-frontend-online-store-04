@@ -5,10 +5,22 @@ import CartItem from './CartItem';
 
 function renderEmptyCartMessage() {
   return (
-    <div>
+    <div className="empty-page">
       <div className="empty_content" data-testid="shopping-cart-empty-message">
         Seu carrinho está vazio
       </div>
+      <Link to="/"><button type="button" className="back-button">VOLTAR</button></Link>
+    </div>
+  );
+}
+
+function renderOptionButtons() {
+  return (
+    <div className="option-buttons">
+      <Link to="/"><button type="button">VOLTAR</button></Link>
+      <Link data-testid="checkout-products" to="/checkout">
+        <button type="button">FINALIZAR COMPRA</button>
+      </Link>
     </div>
   );
 }
@@ -33,7 +45,7 @@ class CartPage extends React.Component {
     const { arrayProducts } = this.state;
     if (arrayProducts && (arrayProducts.length !== 0)) {
       return (
-        <div>
+        <div className="container">
           <h2 className="h2-fixo">Carrinho de compras: </h2>
           <div className="lista-pai">
             {arrayProducts.map((e) => (
@@ -47,10 +59,7 @@ class CartPage extends React.Component {
               />
             ))}
           </div>
-          <Link to="/"><button type="button">VOLTAR</button></Link>
-          <Link data-testid="checkout-products" to="/checkout">
-            <button type="button">FINALIZAR COMPRA</button>
-          </Link>
+          {renderOptionButtons()}
         </div>
       );
     }

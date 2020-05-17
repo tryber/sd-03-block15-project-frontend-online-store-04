@@ -20,11 +20,13 @@
 }
 
 .searchbar {
-  align-items: baseline;
+  align-items: center;
+  align-self: center;
   display: flex;
   flex-direction: column;
+  flex-grow: 5;
   justify-content: center;
-  margin: auto;
+  width: 600px;
 }
 
 button {
@@ -33,4 +35,38 @@ button {
   color: white;
   height: 40px;
   width: 150px;
+}
+
+.top-bar {
+  display: flex;
+}
+
+.cart-info {
+  align-self: flex-end;
+  background: rgb(66,157,238);
+  background: radial-gradient(circle, rgba(66,157,238,0.92) 8%, rgba(13,106,213,0.19511554621848737) 100%);
+  flex-grow: 1;
+  margin: 20px;
+  width: 100px;
+}
+
+.categories {
+  color: white;
+  flex-flow: column;
+  margin-left: 20px;
+}
+
+h3 {
+  color: rgb(158, 158, 158);
+  margin-left: 25px;
+  text-align: center;
+  width: 140px;
+}
+
+body {
+background-color: rgb(216, 216, 216);
+}
+
+input {
+  padding-left: 10px;
 }

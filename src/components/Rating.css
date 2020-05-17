@@ -1,8 +1,9 @@
 form {
   border: 1px solid black;
-  margin: 10px;
+  display: flex;
+  margin: 20px auto;
   padding: 20px;
-  width: 48%;
+  width: 400px;
 }
 
 input , textarea {
