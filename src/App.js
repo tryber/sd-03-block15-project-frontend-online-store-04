@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import CartPage from './components/CartPage';
-import './App.css';
 import ProductDetails from './components/ProductDetails';
 import Checkout from './components/Checkout';
 

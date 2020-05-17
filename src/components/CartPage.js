@@ -33,14 +33,13 @@ class CartPage extends React.Component {
                 total={e.total}
                 price={e.price}
                 thumbnail={e.thumbnail}
-                quantity={e.available_quantity} />
+                quantity={e.available_quantity}
+              />
             ))}
           </div>
           <Link to="/"><button type="button">VOLTAR</button></Link>
           <Link data-testid="checkout-products" to="/checkout">
-            <button type="button">
-              FINALIZAR COMPRA
-            </button>
+            <button type="button">FINALIZAR COMPRA</button>
           </Link>
         </div>
       );

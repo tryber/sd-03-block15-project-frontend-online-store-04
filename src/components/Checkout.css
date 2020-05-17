@@ -1,6 +1,6 @@
 .list {
   display: flex;
-  flex-direction: column;
+  flex: column wrap;
   flex-wrap: wrap;
   justify-content: flex-end;
   margin-top: 10px;
@@ -17,7 +17,7 @@ span {
 
 form {
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
 }
 
 label {

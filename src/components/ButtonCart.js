@@ -6,7 +6,7 @@ function ButtonCart() {
   let storage = JSON.parse(localStorage.getItem('cart'));
   if (storage === null) {
     storage = [];
-  };
+  }
   const total = storage.reduce((sum, e) => (sum + e.total), 0);
 
   return (

@@ -8,19 +8,14 @@ import ButtonCart from './ButtonCart';
 export default class ProductDetails extends Component {
   render() {
     const {
-      location:
-      {
-        state:
-        {
+      location: {
+        state: {
           title, price, id, thumbnail,
           address, condition, available_quantity: avail,
         },
       },
     } = this.props;
-    const {
-      location:
-      { state },
-    } = this.props;
+    const { location: { state } } = this.props;
 
     return (
       <section>
@@ -30,9 +25,7 @@ export default class ProductDetails extends Component {
             <h3 data-testid="product-detail-name">{title}</h3>
             <h4>{id}</h4>
             <img src={thumbnail} alt={title} />
-            <h4>
-              {`Preço: R$ ${price}`}
-            </h4>
+            <h4>{`Preço: R$ ${price}`}</h4>
             <p>{address.city_name}</p>
             <p>{condition}</p>
             <Increment quantity={avail} info={state} />

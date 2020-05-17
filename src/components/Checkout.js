@@ -41,8 +41,8 @@ class Checkout extends React.Component {
 
   componentDidMount() {
     const storage = JSON.parse(localStorage.getItem('cart'));
-    const FinalValue = (storage.reduce((sum, e) => (sum + e.total * e.price), 0).toFixed(2));
-    this.setState({ total: FinalValue });
+    const FinalValue = (storage.reduce((sum, e) => (sum + (e.total * e.price)), 0).toFixed(2));
+    this.setState(() => ({ total: FinalValue }));
   }
 
   calculateTotal(total, price) {
