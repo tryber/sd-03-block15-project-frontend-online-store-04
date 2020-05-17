@@ -4,7 +4,7 @@ import SearchBar from './components/SearchBar';
 import CartPage from './components/CartPage';
 import ProductDetails from './components/ProductDetails';
 import Checkout from './components/Checkout';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 
 class App extends React.Component {
   render() {

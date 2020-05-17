@@ -10,7 +10,7 @@
 }
 
 .input {
-  border: 1px solid #E3651B;
+  border: 1px solid #e3651b;
   height: 30px;
   margin-top: 15px;
   width: 700px;
@@ -35,17 +35,17 @@
 }
 
 button {
+  border: 1px solid #e3651b;
   background-color: white;
-  border: 1px solid #E3651B;
   border-radius: 10px;
-  color: #EA4D2A;
+  color: #ea4d2a;
   height: 45px;
   margin-bottom: 5px;
   width: 170px;
 }
 
 button:hover {
-  background-color: #E3651B;
+  background-color: #e3651b;
   color: white;
   cursor: pointer;
 }
@@ -61,7 +61,7 @@ button:hover {
 
 .cart-info {
   align-self: flex-end;
-  background: #F38C23 8%;
+  background: #f38c23 8%;
   flex-grow: 1;
   margin: 20px;
   height: 70px;

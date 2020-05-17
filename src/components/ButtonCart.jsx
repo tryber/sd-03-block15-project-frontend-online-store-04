@@ -9,12 +9,14 @@ function ButtonCart() {
     storage = [];
   }
   const total = storage.reduce((sum, e) => (sum + e.total), 0);
-  if (total == 'NaN') total = '0';
 
   return (
     <div className="cart-info">
       <Link to="/cart">
-        <img src={cart} width="70px" alt="cart-icon" data-testid="shopping-cart-button" class="img-cart" />
+        <img
+          src={cart}
+          width="70px"
+          alt="cart-icon" data-testid="shopping-cart-button" className="img-cart" />
       </Link>
       <p>Produtos no Carrinho: </p>
       <div data-testid="shopping-cart-size">{total || '0'}</div>
