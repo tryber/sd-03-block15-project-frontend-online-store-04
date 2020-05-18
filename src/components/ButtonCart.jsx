@@ -8,6 +8,9 @@ function ButtonCart() {
   if (storage === null) {
     storage = [];
   }
+  console.log(storage);
+  const totaltest = storage.length;
+  console.log(totaltest);
   const total = storage.reduce((sum, e) => (sum + e.total), 0);
 
   return (
@@ -20,7 +23,7 @@ function ButtonCart() {
         />
       </Link>
       <p>Produtos no Carrinho: </p>
-      <div data-testid="shopping-cart-size">{total || '0'}</div>
+      <div data-testid="shopping-cart-size">{totaltest}</div>
     </div>
   );
 }
