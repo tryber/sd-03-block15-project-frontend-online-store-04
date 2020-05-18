@@ -1,6 +1,3 @@
-import Table from 'react-bootstrap/Table';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Checkout.css';
@@ -63,7 +60,7 @@ class Checkout extends React.Component {
     return (
       <div>
         <div className="tabela-div">
-          <Table striped bordered hover>
+          <table>
             <thead>
               <tr>
                 <th>Nome do produto</th>
@@ -80,7 +77,7 @@ class Checkout extends React.Component {
                 </tr>
               </tbody>
             ))}
-          </Table>
+          </table>
           <span>Total: </span>
           <span>{total}</span>
         </div>

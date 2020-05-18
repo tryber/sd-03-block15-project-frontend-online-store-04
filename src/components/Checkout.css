@@ -14,6 +14,8 @@ span {
 }
 
 form {
+  border: 1px solid rgb(212, 202, 216);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
 }
@@ -22,16 +24,13 @@ label {
   flex-grow: 1;
 }
 
-input {
-  margin-left: 5px;
-  width: 200px;
-}
-
-button {
-  margin: 0 auto;
-}
-
 .tabela-div {
   margin: 0 auto;
   width: 600px;
+}
+
+td{
+  border: 1px solid rgb(212, 202, 216);
+  border-radius: 5px;
+  padding: 10px;
 }
