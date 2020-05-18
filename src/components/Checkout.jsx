@@ -1,6 +1,5 @@
 import Table from 'react-bootstrap/Table';
 import './bootstrap.min.css';
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Checkout.css';
