@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchBar.css';
 import ProductList from './ProductList';
 import ButtonCart from './ButtonCart';
-import * as api from '../services/api';
+import Categories from './Categories';
 
 function addText() {
   return (
@@ -10,6 +10,15 @@ function addText() {
       Digite algum termo de pesquisa ou escolha uma categoria.
     </p>
   );
+}
+
+function getTotal() {
+  let storage = JSON.parse(localStorage.getItem('cart'));
+  if (storage === null) {
+    storage = [];
+  }
+  const total = storage.reduce((sum, e) => (sum + e.total), 0);
+  return total;
 }
 class SearchBar extends React.Component {
   constructor(props) {
@@ -19,14 +28,8 @@ class SearchBar extends React.Component {
       category: '',
       search: false,
       searchWithCategory: false,
-      categories: [],
     };
     this.changeValue = this.changeValue.bind(this);
-  }
-
-  componentDidMount() {
-    api.getCategories()
-      .then((result) => this.setState({ categories: result }));
   }
 
   getCategory(categoryId) {
@@ -65,24 +68,6 @@ class SearchBar extends React.Component {
     );
   }
 
-  renderCategories() {
-    const { categories } = this.state;
-    return (
-      categories.map((el) => (
-        <div className="categories">
-          <button
-            type="button"
-            data-testid="category"
-            key={el.id}
-            value={el.name}
-            onClick={() => this.getCategory(el.id)}
-          >
-            {el.name}
-          </button>
-        </div>
-      )));
-  }
-
   render() {
     const { item, search, searchWithCategory, category } = this.state;
     return (
@@ -98,13 +83,12 @@ class SearchBar extends React.Component {
               PESQUISAR
             </button>
           </div>
-          <ButtonCart className="cart-icon" />
+          <ButtonCart className="cart-icon" cartItems={getTotal()} />
         </div>
         <div className="product-sidebar">
-          {/* <Categories click={(event) => this.getCategorie(event)} /> */}
           <div className="aside-categoria">
             <h3>Ou selecione uma categoria:</h3>
-            {this.renderCategories()}
+            <Categories click={(event) => this.getCategory(event)} />
           </div>
           {search && <ProductList item={item} />}
           {searchWithCategory && <ProductList category={category} item={item} />}

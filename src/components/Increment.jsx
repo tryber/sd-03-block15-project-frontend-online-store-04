@@ -3,7 +3,7 @@ import React from 'react';
 class Increment extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { total: 0 };
+    this.state = { total: 1 };
   }
 
   decrease() {

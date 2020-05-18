@@ -5,22 +5,21 @@ import './ProductList.css';
 import ButtonListing from './ButtonListing';
 
 function renderButton(id, product) {
-  console.log(this);
   return (
-    <button
-      type="button"
+    <Link
+      className="link-detalhes"
+      data-testid="product-detail-link"
+      to={{
+        pathname: `/${id}/details`,
+        state: product,
+      }}
     >
-      <Link
-        className="link-detalhes"
-        data-testid="product-detail-link"
-        to={{
-          pathname: `/${id}/details`,
-          state: product,
-        }}
+      <button
+        type="button"
       >
         VER DATALHES
-      </Link>
-    </button>
+      </button>
+    </Link>
   );
 }
 class ProductList extends React.Component {
