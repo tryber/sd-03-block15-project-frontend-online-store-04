@@ -23,7 +23,7 @@ function ButtonCart() {
         />
       </Link>
       <p>Produtos no Carrinho: </p>
-      <div data-testid="shopping-cart-size" style={{color: 'rgb(47, 10, 65)'}}>{totaltest}</div>
+      <div data-testid="shopping-cart-size" style={{ color: 'rgb(47, 10, 65)' }}>{totaltest}</div>
     </div>
   );
 }
