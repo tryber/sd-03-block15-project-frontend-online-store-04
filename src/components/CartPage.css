@@ -46,10 +46,10 @@
   margin-top: 50px;
 }
 
-.increase{
+.increase {
   display: flex;
-  margin: 10px;
   justify-content: center;
+  margin: 10px;
 }
 
 .increase button {
