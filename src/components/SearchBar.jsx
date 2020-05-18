@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchBar.css';
 import ProductList from './ProductList';
 import ButtonCart from './ButtonCart';
-import * as api from '../services/api';
+import Categories from './Categories';
 
 function addText() {
   return (
@@ -28,14 +28,8 @@ class SearchBar extends React.Component {
       category: '',
       search: false,
       searchWithCategory: false,
-      categories: [],
     };
     this.changeValue = this.changeValue.bind(this);
-  }
-
-  componentDidMount() {
-    api.getCategories()
-      .then((result) => this.setState({ categories: result }));
   }
 
   getCategory(categoryId) {
@@ -74,23 +68,6 @@ class SearchBar extends React.Component {
     );
   }
 
-  renderCategories() {
-    const { categories } = this.state;
-    return (
-      categories.map((el) => (
-        <div className="categories" key={el.id}>
-          <button
-            type="button"
-            data-testid="category"
-            value={el.name}
-            onClick={() => this.getCategory(el.id)}
-          >
-            {el.name}
-          </button>
-        </div>
-      )));
-  }
-
   render() {
     const { item, search, searchWithCategory, category } = this.state;
     return (
@@ -111,7 +88,7 @@ class SearchBar extends React.Component {
         <div className="product-sidebar">
           <div className="aside-categoria">
             <h3>Ou selecione uma categoria:</h3>
-            {this.renderCategories()}
+            <Categories click={(event) => this.getCategory(event)} />
           </div>
           {search && <ProductList item={item} />}
           {searchWithCategory && <ProductList category={category} item={item} />}
