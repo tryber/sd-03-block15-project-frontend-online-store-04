@@ -1,7 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as api from '../services/api';
-import '../ProductList.css';
+import './ProductList.css';
+import ButtonListing from './ButtonListing';
 
+function renderButton(id, product) {
+  console.log(this);
+  return (
+    <button
+      type="button"
+    >
+      <Link
+        className="link-detalhes"
+        data-testid="product-detail-link"
+        to={{
+          pathname: `/${id}/details`,
+          state: product,
+        }}
+      >
+        VER DATALHES
+      </Link>
+    </button>
+  );
+}
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
@@ -12,8 +33,8 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
-    const { products } = this.props;
-    api.getProductsFromCategoryAndQuery('', products)
+    const { category, item } = this.props;
+    api.getProductsFromCategoryAndQuery(category, item)
       .then((result) => {
         this.setState({
           products: result.results,
@@ -37,6 +58,9 @@ class ProductList extends React.Component {
               R$
               {product.price}
             </p>
+            {product.shipping.free_shipping && <p data-testid="free-shipping">Frete Grátis</p>}
+            {renderButton(product.id, product)}
+            <ButtonListing product={product} />
           </div>
         ))}
       </div>

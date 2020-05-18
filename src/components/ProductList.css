@@ -1,0 +1,25 @@
+.product-list {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: 1px solid rgba(238, 226, 213, 0.933);
+  border-radius: 10px;
+  color: rgb(82, 48, 4);
+  margin: 10px;
+  min-height: 350px;
+  text-align: center;
+  width: 200px;
+}
+
+.product button {
+  align-self: flex-end;
+}
+
+.link-detalhes {
+  color: rgb(47, 10, 65);
+  text-decoration: none;
+}

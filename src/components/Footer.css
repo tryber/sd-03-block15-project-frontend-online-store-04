@@ -1,0 +1,15 @@
+.footer {
+  background-color: rgb(57, 18, 59);
+  border-top: 1px solid black;
+  color: white;
+  display: flex;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.nomes {
+  margin: 0 auto;
+  text-align: center;
+}

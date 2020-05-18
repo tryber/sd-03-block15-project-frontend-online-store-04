@@ -1,0 +1,44 @@
+.lista-pai {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.sub-lista {
+  border: 1px solid rgb(243, 214, 134);
+  margin: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.h2-fixo {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-item {
+  text-align: center;
+  width: 200px;
+}
+
+.option-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.option-buttons button {
+  margin: 20px;
+}
+
+.empty-page {
+  margin: auto;
+  text-align: center;
+  width: 300px;
+}
+
+.back-button , .empty_content {
+  font-size: 30px;
+  height: 60px;
+  margin-top: 50px;
+}
