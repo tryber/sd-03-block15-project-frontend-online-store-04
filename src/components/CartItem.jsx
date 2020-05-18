@@ -32,6 +32,7 @@ class CartItem extends React.Component {
         <p data-testid="shopping-cart-product-name">{title}</p>
         <button
           type="button"
+          className="button-style"
           data-testid="product-decrease-quantity"
           onClick={() => this.decrease(total)}
         >
@@ -40,12 +41,13 @@ class CartItem extends React.Component {
         <p data-testid="shopping-cart-product-quantity">{total}</p>
         <button
           type="button"
+          className="button-style"
           data-testid="product-increase-quantity"
           onClick={() => this.increase()}
         >
           +
         </button>
-        <div>{`Valor: R$${price}`}</div>
+        <div>{`Valor: R$ ${price}`}</div>
       </div>
     );
   }
