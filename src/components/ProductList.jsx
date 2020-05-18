@@ -20,6 +20,7 @@ function renderButton(id, product) {
         VER DATALHES
       </button>
     </Link>
+
   );
 }
 class ProductList extends React.Component {

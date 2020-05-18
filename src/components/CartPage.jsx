@@ -14,6 +14,11 @@ function renderEmptyCartMessage() {
   );
 }
 
+function deleteCart() {
+  localStorage.removeItem('cart');
+  window.location.reload();
+}
+
 function renderOptionButtons() {
   return (
     <div className="option-buttons">
@@ -21,6 +26,7 @@ function renderOptionButtons() {
       <Link data-testid="checkout-products" to="/checkout">
         <button type="button">FINALIZAR COMPRA</button>
       </Link>
+      <button onClick={() => deleteCart()} type="button">LIMPAR CARRINHO</button>
     </div>
   );
 }

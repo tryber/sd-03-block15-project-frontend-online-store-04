@@ -4,8 +4,8 @@ import './Rating.css';
 import './Comments.css';
 
 class Comments extends React.Component {
-  renderComments() {
-    const storage = JSON.parse(localStorage.getItem('comments'));
+  renderComments(id) {
+    const storage = JSON.parse(localStorage.getItem(id));
     return (
       storage.map((e) => (
         <div className="comment" key={e.email}>
@@ -26,7 +26,8 @@ class Comments extends React.Component {
   }
 
   render() {
-    const storage = JSON.parse(localStorage.getItem('comments'));
+    const { id } = this.props;
+    const storage = JSON.parse(localStorage.getItem(id));
     if (!storage) {
       return (
         <div className="comment-box">
@@ -39,7 +40,7 @@ class Comments extends React.Component {
       <div className="comment-box">
         <h1>Comentários</h1>
         <div data-testid="product-detail-evaluation">
-          {this.renderComments()}
+          {this.renderComments(id)}
         </div>
       </div>
     );

@@ -1,6 +1,12 @@
 import React from 'react';
 import './CartPage.css';
 
+function removeProduct(item) {
+  const storage = JSON.parse(localStorage.getItem('cart'));
+  const newStorage = storage.filter((e) => e.title !== item);
+  localStorage.setItem('cart', JSON.stringify(newStorage));
+  window.location.reload();
+}
 class CartItem extends React.Component {
   constructor(props) {
     super(props);
@@ -30,21 +36,24 @@ class CartItem extends React.Component {
       <div className="cart-item">
         <img src={thumbnail} alt={title} />
         <p data-testid="shopping-cart-product-name">{title}</p>
-        <button
-          type="button"
-          data-testid="product-decrease-quantity"
-          onClick={() => this.decrease(total)}
-        >
-          -
-        </button>
-        <p data-testid="shopping-cart-product-quantity">{total}</p>
-        <button
-          type="button"
-          data-testid="product-increase-quantity"
-          onClick={() => this.increase()}
-        >
-          +
-        </button>
+        <div className="increase">
+          <button
+            type="button"
+            data-testid="product-decrease-quantity"
+            onClick={() => this.decrease()}
+          >
+            -
+          </button>
+          <p data-testid="shopping-cart-product-quantity">{total}</p>
+          <button
+            type="button"
+            data-testid="product-increase-quantity"
+            onClick={() => this.increase()}
+          >
+            +
+          </button>
+        </div>
+        <button type="button" onClick={() => removeProduct(title)}>Remover Produto</button>
         <div>{`Valor: R$${price}`}</div>
       </div>
     );

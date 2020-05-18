@@ -42,3 +42,20 @@
   height: 60px;
   margin-top: 50px;
 }
+
+.increase{
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+}
+
+.increase button {
+  border-radius: 50%;
+  height: 40px;
+  margin: 0 10px;
+  width: 40px;
+}
+
+.increase p {
+  width: 10px;
+}

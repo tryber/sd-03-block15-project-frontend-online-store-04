@@ -4,11 +4,12 @@ import cart2 from './carrinho.png';
 class ButtonListing extends Component {
   constructor(props) {
     super(props);
-
+    this.state = { text: 'Adicionar ao Carrinho' };
     this.addCart = this.addCart.bind(this);
   }
 
   addCart() {
+    this.setState({ text: 'Produto Adicionado' });
     const { product } = this.props;
     const getCart = JSON.parse(localStorage.getItem('cart'));
     if (!getCart) {
@@ -28,6 +29,7 @@ class ButtonListing extends Component {
   }
 
   render() {
+    const { text } = this.state;
     return (
       <button
         type="button"
@@ -35,7 +37,7 @@ class ButtonListing extends Component {
         data-testid="product-add-to-cart"
         className="button-add"
       >
-        Adicionar ao Carrinho
+        {text}
         <img src={cart2} width="20px" alt="cart-icon" />
       </button>
     );

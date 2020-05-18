@@ -21,12 +21,12 @@ class Rating extends React.Component {
     this.setState({ [field]: event.target.value });
   }
 
-  createComment() {
+  createComment(id) {
     const { email, message, rating } = this.state;
-    let storage = JSON.parse(localStorage.getItem('comments'));
+    let storage = JSON.parse(localStorage.getItem(id));
     if (storage === null) { storage = []; }
     const newStorage = [...storage, { email, message, rating }];
-    localStorage.setItem('comments', [JSON.stringify(newStorage)]);
+    localStorage.setItem(id, [JSON.stringify(newStorage)]);
     this.setState({
       email: '',
       message: '',
@@ -62,6 +62,7 @@ class Rating extends React.Component {
 
   render() {
     const { rating } = this.state;
+    const { id } = this.props;
     return (
       <div>
         <form>
@@ -75,12 +76,12 @@ class Rating extends React.Component {
           />
           {this.renderEmail()}
           {this.renderTextArea()}
-          <button type="button" className="rating-button" onClick={() => this.createComment()}>
+          <button type="button" className="rating-button" onClick={() => this.createComment(id)}>
             Avaliar
           </button>
         </form>
         <div>
-          <Comments />
+          <Comments id={id} />
         </div>
       </div>
     );

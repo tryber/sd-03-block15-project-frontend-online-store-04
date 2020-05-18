@@ -29,7 +29,7 @@ export default class ProductDetails extends Component {
             <p>{condition}</p>
             <Increment quantity={avail} info={state} />
             <Link to="/"><button type="button">VOLTAR</button></Link>
-            <Rating />
+            <Rating id={id} />
           </div>
         </div>
         <ButtonCart />
