@@ -48,6 +48,7 @@ button:hover {
   background-color: #e3651b;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .top-bar {
@@ -70,6 +71,25 @@ button:hover {
 .categories {
   flex-flow: column;
   margin-left: 30px;
+}
+
+.logo {
+  color: rgb(82, 9, 110);
+  font-size: 60px;
+  letter-spacing: 1px;
+  margin-left: 40px;
+}
+
+.sub-logo {
+  color: #ea4d2a;
+  font-size: 14px;
+  margin-left: 90px;
+  margin-top: -20px;
+}
+
+.div-logo {
+  display: flex;
+  flex-direction: column;
 }
 
 h3 {

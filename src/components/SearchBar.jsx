@@ -73,6 +73,10 @@ class SearchBar extends React.Component {
     return (
       <div>
         <div className="top-bar">
+          <div className="div-logo">
+            <span className="logo">F.H.R</span>
+            <span className="sub-logo">LOJA VIRTUAL</span>
+          </div>
           <div className="searchbar">
             {this.renderSearchBar()}
             <button
