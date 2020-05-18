@@ -11,6 +11,15 @@ function addText() {
     </p>
   );
 }
+
+function getTotal() {
+  let storage = JSON.parse(localStorage.getItem('cart'));
+  if (storage === null) {
+    storage = [];
+  }
+  const total = storage.reduce((sum, e) => (sum + e.total), 0);
+  return total;
+}
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -69,11 +78,10 @@ class SearchBar extends React.Component {
     const { categories } = this.state;
     return (
       categories.map((el) => (
-        <div className="categories">
+        <div className="categories" key={el.id}>
           <button
             type="button"
             data-testid="category"
-            key={el.id}
             value={el.name}
             onClick={() => this.getCategory(el.id)}
           >
@@ -98,10 +106,9 @@ class SearchBar extends React.Component {
               PESQUISAR
             </button>
           </div>
-          <ButtonCart className="cart-icon" />
+          <ButtonCart className="cart-icon" total={getTotal()} />
         </div>
         <div className="product-sidebar">
-          {/* <Categories click={(event) => this.getCategorie(event)} /> */}
           <div className="aside-categoria">
             <h3>Ou selecione uma categoria:</h3>
             {this.renderCategories()}
