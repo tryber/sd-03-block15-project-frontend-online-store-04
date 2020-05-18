@@ -106,7 +106,7 @@ class SearchBar extends React.Component {
               PESQUISAR
             </button>
           </div>
-          <ButtonCart className="cart-icon" total={getTotal()} />
+          <ButtonCart className="cart-icon" cartItems={getTotal()} />
         </div>
         <div className="product-sidebar">
           <div className="aside-categoria">

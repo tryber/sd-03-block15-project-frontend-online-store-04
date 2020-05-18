@@ -6,12 +6,12 @@ import './ButtonCart.css';
 class ButtonCart extends React.Component {
   constructor(props) {
     super(props);
-    const { total } = this.props;
-    this.state = { total };
+    const { cartItems } = this.props;
+    this.state = { cartItems };
   }
 
   render() {
-    const { total } = this.state;
+    const { cartItems } = this.state;
     return (
       <div className="cart-info">
         <Link to="/cart">
@@ -22,7 +22,7 @@ class ButtonCart extends React.Component {
           />
         </Link>
         <p>Produtos no Carrinho: </p>
-        <div data-testid="shopping-cart-size">{total}</div>
+        <div data-testid="shopping-cart-size">{cartItems}</div>
       </div>
     );
   }
