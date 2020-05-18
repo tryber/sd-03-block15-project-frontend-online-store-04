@@ -26,7 +26,7 @@ export default class ProductDetails extends Component {
             <img src={thumbnail} alt={title} />
             <h4>{`Preço: R$ ${price}`}</h4>
             <p>{address.city_name}</p>
-            <p>{condition}</p>
+            <p>{`Condição: ${condition}`}</p>
             <Increment quantity={avail} info={state} />
             <Link to="/"><button type="button">VOLTAR</button></Link>
             <Rating />
