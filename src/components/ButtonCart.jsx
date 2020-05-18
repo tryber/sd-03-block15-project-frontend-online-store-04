@@ -11,7 +11,7 @@ function ButtonCart() {
   console.log(storage);
   const totaltest = storage.length;
   console.log(totaltest);
-  const total = storage.reduce((sum, e) => (sum + e.total), 0);
+  /* const total = storage.reduce((sum, e) => (sum + e.total), 0); */
 
   return (
     <div className="cart-info">
