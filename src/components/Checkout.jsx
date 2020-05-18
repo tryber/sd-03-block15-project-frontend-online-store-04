@@ -1,8 +1,9 @@
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Checkout.css';
-import Table from 'react-bootstrap/Table';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function renderForm() {
   return (
@@ -71,20 +72,17 @@ class Checkout extends React.Component {
               </tr>
             </thead>
             {storage.map((e) => (
-            <tbody key={e.title}>
-              <tr>
-                <td>{e.title}</td>
-                <td>{e.total}</td>
-                <td>{e.price}</td>
-              </tr>
-            </tbody>
+              <tbody key={e.title}>
+                <tr>
+                  <td>{e.title}</td>
+                  <td>{e.total}</td>
+                  <td>{e.price}</td>
+                </tr>
+              </tbody>
             ))}
           </Table>
-        
-          <div className="total">
-            <span>Total: </span>
-            <span>{total}</span>
-          </div>
+          <span>Total: </span>
+          <span>{total}</span>
         </div>
         {renderForm()}
         <Link to="/"><button type="button">VOLTAR</button></Link>
