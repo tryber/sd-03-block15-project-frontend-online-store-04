@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Checkout.css';
-
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function renderForm() {
   return (
@@ -60,21 +61,28 @@ class Checkout extends React.Component {
     const { total } = this.state;
     return (
       <div>
-        <div className="list">
-          <div className="list-child">
+        <div className="tabela-div">
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Nome do produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+              </tr>
+            </thead>
             {storage.map((e) => (
-              <div key={e.title}>
-                <div>
-                  <span>{e.title}</span>
-                  <span>{e.total}</span>
-                  <span>{e.price}</span>
-                </div>
-              </div>
+            <tbody key={e.title}>
+              <tr>
+                <td>{e.title}</td>
+                <td>{e.total}</td>
+                <td>{e.price}</td>
+              </tr>
+            </tbody>
             ))}
-
-          </div>
+          </Table>
+        
           <div className="total">
-            <span>Total</span>
+            <span>Total: </span>
             <span>{total}</span>
           </div>
         </div>

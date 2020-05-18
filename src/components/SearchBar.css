@@ -48,6 +48,7 @@ button:hover {
   background-color: #e3651b;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .top-bar {
