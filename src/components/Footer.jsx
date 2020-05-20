@@ -6,13 +6,13 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="footer">
-        <span className="nomes">Fabiano Emiliano<br />
-        Henrique Baêta<br />
-        Rodrigo Brezolin<br />
-        2020
-        </span>
-      </div>
+      <footer className="footer">
+        <p className="nomes">Desenvolvido por:
+        <a href='https://www.linkedin.com/in/fabemiliano/' target='_blank'> Fabiano Emiliano</a>, 
+        <a href='https://www.linkedin.com/in/henrique-ba%C3%AAta-leite-785a4b15a/' target='_blank'> Henrique Baêta</a>, 
+        <a href='https://www.linkedin.com/in/rodrigobrezolin/' target='_blank'> Rodrigo Brezolin</a> - 2020
+        </p>
+      </footer>
     );
   }
 }
